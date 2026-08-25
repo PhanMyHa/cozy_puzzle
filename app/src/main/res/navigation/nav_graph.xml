@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.cozypuzzle.presentation.home.HomeFragment"
+        android:label="@string/tab_home">
+        <action
+            android:id="@+id/action_home_to_basic_puzzle_select"
+            app:destination="@id/basicPuzzleSelectFragment" />
+        <action
+            android:id="@+id/action_home_to_cat_level_select"
+            app:destination="@id/catLevelSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicPuzzleSelectFragment"
+        android:name="com.example.cozypuzzle.presentation.puzzle.select.BasicPuzzleSelectFragment"
+        android:label="@string/game_mode_basic" />
+
+    <fragment
+        android:id="@+id/puzzleFragment"
+        android:name="com.example.cozypuzzle.presentation.puzzle.PuzzleFragment"
+        android:label="@string/game_mode_basic" />
+
+    <fragment
+        android:id="@+id/catLevelSelectFragment"
+        android:name="com.example.cozypuzzle.presentation.cat.select.CatLevelSelectFragment"
+        android:label="@string/game_mode_find_my_cat" />
+
+    <fragment
+        android:id="@+id/catGameFragment"
+        android:name="com.example.cozypuzzle.presentation.cat.CatGameFragment"
+        android:label="@string/game_mode_find_my_cat" />
+
+    <fragment
+        android:id="@+id/gardenFragment"
+        android:name="com.example.cozypuzzle.presentation.garden.GardenFragment"
+        android:label="@string/tab_garden" />
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.cozypuzzle.presentation.shop.ShopFragment"
+        android:label="@string/tab_shop" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.cozypuzzle.presentation.profile.ProfileFragment"
+        android:label="@string/tab_profile" />
+
+</navigation>

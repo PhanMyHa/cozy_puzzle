@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">Cozy Puzzle</string>
+
+    <string name="tab_home">Home</string>
+    <string name="tab_garden">Garden</string>
+    <string name="tab_shop">Shop</string>
+    <string name="tab_profile">Profile</string>
+
+    <string name="player_default_name">Friend</string>
+    <string name="feature_coming_soon">Coming soon in a cozy update 🌱</string>
+
+    <string name="greeting_morning">Good morning, %1$s ☀️</string>
+    <string name="greeting_afternoon">Good afternoon, %1$s 🌤️</string>
+    <string name="greeting_evening">Good evening, %1$s 🌸</string>
+
+    <string name="daily_puzzle_title">Daily Puzzle</string>
+    <string name="daily_puzzle_size_format">🧩 %1$d × %1$d</string>
+    <string name="daily_puzzle_size_placeholder">🧩 4 × 4</string>
+    <string name="btn_play">Play</string>
+    <string name="game_modes_header">Game Modes</string>
+
+    <string name="garden_emoji">🌳</string>
+    <string name="garden_title">Your Garden</string>
+    <string name="garden_summary_format">%1$d decorations · %2$d pets</string>
+    <string name="garden_summary_placeholder">0 decorations · 0 pets</string>
+    <string name="garden_hint">Your garden is empty. Play puzzles to earn decorations and pets!</string>
+    <string name="btn_edit_garden">Edit Garden</string>
+    <string name="btn_done_editing">Done</string>
+
+    <string name="shop_emoji">🛍️</string>
+    <string name="coins_format">🪙 %1$d coins</string>
+    <string name="coins_placeholder">🪙 0 coins</string>
+    <string name="shop_empty_hint">The shop is being stocked. Come back soon!</string>
+
+    <string name="profile_level_format">Level %1$d</string>
+    <string name="profile_level_placeholder">Level 1</string>
+    <string name="btn_edit_name">Edit Name</string>
+    <string name="btn_settings">Settings</string>
+
+    <string name="cd_puzzle_board">Puzzle board</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_puzzle_preview">Puzzle preview</string>
+
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_hard">Hard</string>
+    <string name="difficulty_expert">Expert</string>
+
+    <string name="basic_select_title">Basic Puzzles</string>
+    <string name="basic_select_subtitle">Pick a picture and a size 🧩</string>
+    <string name="basic_select_empty">No puzzles available right now 🥺</string>
+    <string name="best_time_format">Best: %1$s</string>
+    <string name="best_time_none">Not solved yet</string>
+    <string name="grid_size_format">%1$d × %1$d</string>
+
+    <string name="hud_timer_format">⏱ %1$s</string>
+    <string name="hud_moves_format">🧩 %1$d moves</string>
+    <string name="hud_hints_format">💡 %1$d</string>
+
+    <string name="btn_undo">Undo</string>
+    <string name="btn_redo">Redo</string>
+    <string name="btn_rotate">Rotate</string>
+    <string name="btn_hint">Hint</string>
+    <string name="btn_restart">Restart</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_quit">Choose puzzle</string>
+    <string name="pause_title">Paused ☕</string>
+
+    <string name="puzzle_error">Oops! Could not load this puzzle 🥺</string>
+
+    <string name="result_celebration">🎉</string>
+    <string name="result_title">Puzzle complete!</string>
+    <string name="result_time_format">⏱ Time: %1$s</string>
+    <string name="result_moves_format">🧩 Moves: %1$d</string>
+    <string name="result_hints_format">💡 Hints used: %1$d</string>
+    <string name="result_perfect">✨ Perfect — no hints used!</string>
+    <string name="btn_retry">Play again</string>
+    <string name="btn_choose_another">Choose another puzzle</string>
+    <string name="btn_home">Home</string>
+
+    <string name="game_mode_basic">Basic</string>
+    <string name="game_mode_find_my_cat">Find My Cat</string>
+
+    <string name="cat_select_title">Find My Cat</string>
+    <string name="cat_select_subtitle">Rotate and swap tiles to guide the cat home 🐱</string>
+    <string name="cat_level_emoji">🐱</string>
+
+    <string name="cat_path_ready">Path ready! Press Walk 🐾</string>
+    <string name="cat_path_missing">No path yet — keep arranging the tiles</string>
+    <string name="btn_walk">🐾 Walk</string>
+    <string name="cd_cat_board">Cat path board</string>
+    <string name="cat_result_title">The cat is home!</string>
+    <string name="game_mode_cozy_garden">Cozy Garden</string>
+    <string name="game_mode_frog_pond">Frog Pond</string>
+</resources>

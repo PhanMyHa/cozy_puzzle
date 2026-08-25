@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_tab_home"
+        android:title="@string/tab_home" />
+
+    <item
+        android:id="@+id/gardenFragment"
+        android:icon="@drawable/ic_tab_garden"
+        android:title="@string/tab_garden" />
+
+    <item
+        android:id="@+id/shopFragment"
+        android:icon="@drawable/ic_tab_shop"
+        android:title="@string/tab_shop" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_tab_profile"
+        android:title="@string/tab_profile" />
+
+</menu>

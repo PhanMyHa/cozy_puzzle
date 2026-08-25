@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.CozyPuzzle" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cozy_green_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">#FF33402A</item>
+        <item name="colorOnPrimaryContainer">@color/cozy_green_container</item>
+        <item name="colorSecondary">@color/cozy_blossom_dark</item>
+        <item name="android:colorBackground">@color/cozy_cream_dark</item>
+    </style>
+
+    <style name="Theme.CozyPuzzle" parent="Base.Theme.CozyPuzzle" />
+</resources>
