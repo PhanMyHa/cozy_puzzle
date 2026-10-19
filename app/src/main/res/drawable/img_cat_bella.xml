@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Soft Pastel Garden Green Halo -->
+    <path
+        android:fillColor="#E6F1F8E9"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0"/>
+
+    <!-- Left Ear -->
+    <path
+        android:fillColor="#FFFFCC80"
+        android:pathData="M52,70 L36,36 Q60,38 74,58 Z"/>
+    <path
+        android:fillColor="#FFFF8A65"
+        android:pathData="M52,62 L43,44 Q56,45 66,54 Z"/>
+
+    <!-- Right Ear -->
+    <path
+        android:fillColor="#FFFFCC80"
+        android:pathData="M126,58 Q140,38 164,36 L148,70 Z"/>
+    <path
+        android:fillColor="#FFFF8A65"
+        android:pathData="M134,54 Q144,45 157,44 L148,62 Z"/>
+
+    <!-- Flower Wreath Crown -->
+    <!-- Green Vine -->
+    <path
+        android:strokeColor="#FF81C784"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M55,60 Q100,48 145,60"/>
+    <!-- Daisy 1 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M65,58 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFD54F"
+        android:pathData="M69,58 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+    <!-- Center Rose 2 -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M92,50 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0 Z"/>
+    <path
+        android:fillColor="#FFFF4081"
+        android:pathData="M97,50 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z"/>
+    <!-- Daisy 3 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M123,58 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFD54F"
+        android:pathData="M127,58 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+
+    <!-- Calico Cream Head & Body -->
+    <path
+        android:fillColor="#FFFFF8E1"
+        android:pathData="M50,85 C40,110 42,145 70,160 C90,170 110,170 130,160 C158,145 160,110 150,85 C140,68 60,68 50,85 Z"/>
+
+    <!-- Orange Calico Forehead Patch -->
+    <path
+        android:fillColor="#FFFFA726"
+        android:pathData="M70,68 C70,90 90,92 90,75 C90,65 78,65 70,68 Z"/>
+
+    <!-- Cheeks Blush -->
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M66,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M118,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+
+    <!-- Emerald Green Sparkling Eyes -->
+    <path
+        android:fillColor="#FF2E7D32"
+        android:pathData="M78,114 a6,7 0 1,0 12,0 a6,7 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M80,112 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+    <path
+        android:fillColor="#FF2E7D32"
+        android:pathData="M110,114 a6,7 0 1,0 12,0 a6,7 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M112,112 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+
+    <!-- Nose & Mouth -->
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M97,122 L103,122 L100,125 Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF3E2723"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M95,126 Q100,130 100,126 Q100,130 105,126"/>
+
+    <!-- Paws -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M78,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M108,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+</vector>

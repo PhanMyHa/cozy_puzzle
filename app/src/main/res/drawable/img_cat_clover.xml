@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Soft Pastel Green Halo -->
+    <path
+        android:fillColor="#E6E8F5E9"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0"/>
+
+    <!-- Left Ear (Brown) -->
+    <path
+        android:fillColor="#FF795548"
+        android:pathData="M52,70 L36,36 Q60,38 74,58 Z"/>
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M52,62 L43,44 Q56,45 66,54 Z"/>
+
+    <!-- Right Ear (Orange) -->
+    <path
+        android:fillColor="#FFFFA726"
+        android:pathData="M126,58 Q140,38 164,36 L148,70 Z"/>
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M134,54 Q144,45 157,44 L148,62 Z"/>
+
+    <!-- Cream Head & Body -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M50,85 C40,110 42,145 70,160 C90,170 110,170 130,160 C158,145 160,110 150,85 C140,68 60,68 50,85 Z"/>
+
+    <!-- Cheeks Blush -->
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M66,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M118,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+
+    <!-- Big Happy Eyes -->
+    <path
+        android:fillColor="#FF263238"
+        android:pathData="M78,114 a6,7 0 1,0 12,0 a6,7 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M80,112 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+    <path
+        android:fillColor="#FF263238"
+        android:pathData="M110,114 a6,7 0 1,0 12,0 a6,7 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M112,112 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+
+    <!-- Four Leaf Clover in Mouth -->
+    <path
+        android:fillColor="#FF43A047"
+        android:pathData="M100,132 a5,5 0 1,0 -8,-3 a5,5 0 1,0 0,9 a5,5 0 1,0 8,-3 Z"/>
+    <path
+        android:strokeColor="#FF2E7D32"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M100,130 Q105,136 102,142"/>
+
+    <!-- Nose & Mouth -->
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M97,122 L103,122 L100,125 Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF37474F"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M95,126 Q98,129 100,126"/>
+
+    <!-- Paws -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M78,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M108,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+</vector>

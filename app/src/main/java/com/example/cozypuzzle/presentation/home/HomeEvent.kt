@@ -15,7 +15,13 @@ sealed interface HomeEffect {
 
     data object FeatureComingSoon : HomeEffect
 
-    data object NavigateToBasicPuzzles : HomeEffect
+    data object NavigateToDailyPuzzle : HomeEffect
 
-    data object NavigateToCatLevels : HomeEffect
+    data object NavigateToCatPuzzle : HomeEffect
+
+    data object NavigateToColorCatSelect : HomeEffect
+
+    data object NavigateToSlideCatSelect : HomeEffect
+
+    data object NavigateToFindPairSelect : HomeEffect
 }

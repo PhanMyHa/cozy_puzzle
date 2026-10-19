@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Soft Pastel Halo Background -->
+    <path
+        android:fillColor="#E6F0FAFF"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0"/>
+
+    <!-- Left Ear -->
+    <path
+        android:fillColor="#FF90A4AE"
+        android:pathData="M52,70 L36,36 Q60,38 74,58 Z"/>
+    <path
+        android:fillColor="#FFF8BBD0"
+        android:pathData="M52,62 L43,44 Q56,45 66,54 Z"/>
+
+    <!-- Right Ear -->
+    <path
+        android:fillColor="#FF90A4AE"
+        android:pathData="M126,58 Q140,38 164,36 L148,70 Z"/>
+    <path
+        android:fillColor="#FFF8BBD0"
+        android:pathData="M134,54 Q144,45 157,44 L148,62 Z"/>
+
+    <!-- Straw Sunhat Crown -->
+    <path
+        android:fillColor="#FFE1F5FE"
+        android:pathData="M65,55 C65,30 135,30 135,55 Z"/>
+
+    <!-- Sunhat Brim -->
+    <path
+        android:fillColor="#FFB3E5FC"
+        android:pathData="M40,58 C40,48 160,48 160,58 C160,68 40,68 40,58 Z"/>
+
+    <!-- Hat Blue Ribbon Band -->
+    <path
+        android:fillColor="#FF81D4FA"
+        android:pathData="M62,54 C62,48 138,48 138,54 C138,58 62,58 62,54 Z"/>
+
+    <!-- Hat Flower Accent -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M130,52 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFEB3B"
+        android:pathData="M134,52 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+
+    <!-- Chubby Cat Head & Body (Grey & White) -->
+    <path
+        android:fillColor="#FFCFD8DC"
+        android:pathData="M50,85 C40,110 42,145 70,160 C90,170 110,170 130,160 C158,145 160,110 150,85 C140,68 60,68 50,85 Z"/>
+
+    <!-- White Face & Belly Mask -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M68,102 C60,120 65,150 100,154 C135,150 140,120 132,102 C125,90 112,98 100,98 C88,98 75,90 68,102 Z"/>
+
+    <!-- Pink Cheeks Blush -->
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M66,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M118,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+
+    <!-- Sparkly Eyes -->
+    <path
+        android:fillColor="#FF263238"
+        android:pathData="M78,114 a6,7 0 1,0 12,0 a6,7 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M80,112 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+    <path
+        android:fillColor="#FF263238"
+        android:pathData="M110,114 a6,7 0 1,0 12,0 a6,7 0 1,0 -12,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M112,112 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+
+    <!-- Nose & Happy Mouth -->
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M97,122 L103,122 L100,125 Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF37474F"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M95,126 Q100,130 100,126 Q100,130 105,126"/>
+
+    <!-- Blue Bow Tie -->
+    <path
+        android:fillColor="#FF4FC3F7"
+        android:pathData="M92,154 L84,148 L84,160 Z M108,154 L116,148 L116,160 Z"/>
+    <path
+        android:fillColor="#FF0288D1"
+        android:pathData="M97,151 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z"/>
+
+    <!-- Cute Paws Resting -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M78,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M108,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+</vector>

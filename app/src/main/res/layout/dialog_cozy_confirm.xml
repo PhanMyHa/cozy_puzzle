@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Card Container -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        app:cardBackgroundColor="@color/cozy_card_background"
+        app:cardCornerRadius="@dimen/cat_puzzle_dialog_radius"
+        app:cardElevation="8dp"
+        app:strokeColor="@color/cozy_card_stroke"
+        app:strokeWidth="@dimen/card_stroke_width">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_confirm_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Reset Game?" />
+
+            <!-- Message -->
+            <TextView
+                android:id="@+id/tv_confirm_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@color/cozy_subtext"
+                android:textSize="14sp"
+                tools:text="Are you sure you want to start over?" />
+
+            <!-- Positive Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm_positive"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_pill"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/cozy_pastel_pink"
+                android:fontFamily="sans-serif-medium"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_button"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/button_corner_radius_pill"
+                tools:text="Reset" />
+
+            <!-- Negative Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm_negative"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_pill"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/cozy_pastel_blue_container"
+                android:fontFamily="sans-serif-medium"
+                android:text="@android:string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="@dimen/text_size_button"
+                app:cornerRadius="@dimen/button_corner_radius_pill"
+                app:strokeColor="@color/cozy_card_stroke"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Peeking Cat on top -->
+    <ImageView
+        android:id="@+id/iv_peeking_cat"
+        android:layout_width="@dimen/cat_puzzle_dialog_peeking_cat_size"
+        android:layout_height="@dimen/cat_puzzle_dialog_peeking_cat_size"
+        android:layout_gravity="top|center_horizontal"
+        android:contentDescription="@null"
+        android:src="@drawable/img_puzzle_cute_cat" />
+
+</FrameLayout>

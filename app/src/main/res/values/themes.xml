@@ -1,12 +1,83 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.CozyPuzzle" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/cozy_green</item>
+        <item name="colorPrimary">@color/cozy_pastel_blue</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryContainer">@color/cozy_green_container</item>
-        <item name="colorOnPrimaryContainer">@color/cozy_brown_text</item>
-        <item name="colorSecondary">@color/cozy_blossom</item>
-        <item name="android:colorBackground">@color/cozy_cream</item>
+        <item name="colorPrimaryContainer">@color/cozy_pastel_blue_container</item>
+        <item name="colorOnPrimaryContainer">@color/cozy_navy_text</item>
+        <item name="colorSecondary">@color/cozy_pastel_pink</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/cozy_pastel_pink_light</item>
+        <item name="colorOnSecondaryContainer">@color/cozy_pastel_pink_dark</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/cozy_navy_text</item>
+        <item name="android:colorBackground">@color/cozy_bg_screen</item>
     </style>
 
     <style name="Theme.CozyPuzzle" parent="Base.Theme.CozyPuzzle" />
+
+    <!-- Shape appearances -->
+    <style name="ShapeAppearance.CozyPuzzle.CircleImage" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.CozyPuzzle.CardImage" parent="">
+        <item name="cornerSize">@dimen/game_card_inner_image_radius</item>
+    </style>
+
+    <style name="ShapeAppearance.CozyPuzzle.CardLarge" parent="">
+        <item name="cornerSize">@dimen/card_corner_radius_large</item>
+    </style>
+
+    <style name="ShapeAppearance.CozyPuzzle.CardMedium" parent="">
+        <item name="cornerSize">@dimen/card_corner_radius_medium</item>
+    </style>
+
+    <!-- Pill Buttons (Style guide: Pill button, mau hong cho hanh dong chinh, xanh bien cho hanh dong phu) -->
+    <style name="Widget.CozyPuzzle.Button.Pill.Primary" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/button_corner_radius_pill</item>
+        <item name="backgroundTint">@color/cozy_pastel_pink</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <item name="android:minHeight">@dimen/button_height_pill</item>
+    </style>
+
+    <style name="Widget.CozyPuzzle.Button.Pill.Secondary" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/button_corner_radius_pill</item>
+        <item name="backgroundTint">@color/cozy_pastel_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <item name="android:minHeight">@dimen/button_height_pill</item>
+    </style>
+
+    <!-- Cozy Card (Style guide: bo goc 20-28dp, vien xanh nhat, do bong mem) -->
+    <style name="Widget.CozyPuzzle.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/card_corner_radius_medium</item>
+        <item name="cardElevation">@dimen/card_elevation_soft</item>
+        <item name="strokeWidth">@dimen/card_stroke_width</item>
+        <item name="strokeColor">@color/cozy_card_stroke</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <!-- Cozy Bottom Sheet Style -->
+    <style name="Theme.CozyPuzzle.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.CozyPuzzle.BottomSheet</item>
+    </style>
+
+    <style name="Widget.CozyPuzzle.BottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="android:background">@drawable/bg_bottom_sheet_cozy</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.CozyPuzzle.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearance.CozyPuzzle.BottomSheet" parent="">
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
 </resources>

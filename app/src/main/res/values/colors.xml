@@ -3,14 +3,61 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- Cozy Puzzle Pastel Blue & Pastel Pink Palette -->
+    <!-- Màu chủ đạo xanh biển pastel -->
+    <color name="cozy_pastel_blue">#FF83D4F7</color>
+    <color name="cozy_pastel_blue_light">#FFD8EEF8</color>
+    <color name="cozy_pastel_blue_dark">#FF4FA8D8</color>
+    <color name="cozy_pastel_blue_container">#FFEAF6FD</color>
+
+    <!-- Màu chủ đạo hồng pastel -->
+    <color name="cozy_pastel_pink">#FFFFB6D2</color>
+    <color name="cozy_pastel_pink_light">#FFFFE8F0</color>
+    <color name="cozy_pastel_pink_dark">#FFF06292</color>
+
+    <!-- Nền trắng xanh -->
+    <color name="cozy_bg_screen">#FFF5FAFF</color>
+
+    <!-- Viền card xanh nhạt & typography -->
+    <color name="cozy_card_stroke">#FFD8EEF8</color>
+    <color name="cozy_card_background">#FFFFFFFF</color>
+    <color name="cozy_navy_text">#FF1E3A5F</color>
+    <color name="cozy_subtext">#FF6B7F96</color>
+
+    <!-- Accents & Indicators -->
+    <color name="cozy_star_yellow">#FFFFC107</color>
+    <color name="cozy_badge_red">#FFFF5252</color>
+    <color name="cozy_tab_unselected">#FF7B93A8</color>
+    <color name="cozy_dot_inactive">#FFD8EEF8</color>
+    <color name="cozy_dot_active">#FF83D4F7</color>
+    <color name="cozy_hero_sky_start">#FFD4EFFD</color>
+    <color name="cozy_hero_sky_end">#FFF5FAFF</color>
+
+    <!-- Existing colors preserved for backwards compatibility -->
     <color name="cozy_green">#FF7CB342</color>
     <color name="cozy_green_dark">#FF558B2F</color>
     <color name="cozy_green_container">#FFDCEDC8</color>
-    <color name="cozy_blossom">#FFF48FB1</color>
-    <color name="cozy_blossom_dark">#FFC2185B</color>
-    <color name="cozy_sky">#FF81D4FA</color>
+    <color name="cozy_blossom">#FFFFB6D2</color>
+    <color name="cozy_blossom_dark">#FFF06292</color>
+    <color name="cozy_sky">#FF83D4F7</color>
     <color name="cozy_sun">#FFFFD54F</color>
-    <color name="cozy_cream">#FFFFFBF2</color>
+    <color name="cozy_cream">#FFF5FAFF</color>
     <color name="cozy_cream_dark">#FF1E1B16</color>
-    <color name="cozy_brown_text">#FF5D4037</color>
+    <color name="cozy_brown_text">#FF1E3A5F</color>
+
+    <!-- My Cats Rarity & Theme Palette -->
+    <color name="cozy_rarity_common">#FF48C9B0</color>
+    <color name="cozy_rarity_common_bg">#FFE8F8F5</color>
+    <color name="cozy_rarity_rare">#FF5DADE2</color>
+    <color name="cozy_rarity_rare_bg">#FFEBF5FB</color>
+    <color name="cozy_rarity_epic">#FFBA68C8</color>
+    <color name="cozy_rarity_epic_bg">#FFF4ECF7</color>
+    <color name="cozy_rarity_legendary">#FFFFA726</color>
+    <color name="cozy_rarity_legendary_bg">#FFFEF5E7</color>
+
+    <!-- Cushion & Silhouette -->
+    <color name="cozy_cushion_pink">#FFFFD4E5</color>
+    <color name="cozy_cushion_pink_dark">#FFFFB6D2</color>
+    <color name="cozy_silhouette">#FF9EB2C7</color>
+    <color name="cozy_silhouette_tint">#CC4B627A</color>
 </resources>

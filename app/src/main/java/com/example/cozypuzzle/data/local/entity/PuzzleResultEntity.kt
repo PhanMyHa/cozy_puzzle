@@ -14,5 +14,12 @@ data class PuzzleResultEntity(
     val durationMs: Long,
     val moveCount: Int,
     val hintsUsed: Int,
+
+    /** Daily Draw only: number of failed attempts before completing. */
+    val attemptCount: Int? = null,
+
+    /** Daily Draw only: id of the brush color used. */
+    val brushColorId: String? = null,
+
     val completedAtEpochMs: Long
 )

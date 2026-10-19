@@ -9,5 +9,8 @@ interface PlayerRepository {
 
     suspend fun updatePlayerName(name: String)
 
+    /** Persists the avatar as a local file path; pass null to reset it. */
+    suspend fun updateAvatarUri(avatarUri: String?)
+
     suspend fun addCoins(amount: Int)
 }

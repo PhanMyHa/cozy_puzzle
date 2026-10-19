@@ -8,6 +8,10 @@ data class PlayerEntity(
     @PrimaryKey val id: Long = DEFAULT_PLAYER_ID,
     val name: String,
     val avatarId: Int,
+
+    /** Local file path of the uploaded avatar photo. */
+    val avatarUri: String? = null,
+
     val level: Int,
     val coins: Int,
     val gems: Int

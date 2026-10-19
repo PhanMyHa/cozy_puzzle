@@ -1,8 +1,9 @@
 package com.example.cozypuzzle.core.puzzle.model
 
 enum class PuzzleMode {
-    BASIC,
-    FIND_MY_CAT,
-    COZY_GARDEN,
-    FROG_POND
+    CAT_PUZZLE,
+    COLOR_THE_CAT,
+    SLIDE_THE_CAT,
+    FIND_THE_PAIR,
+    DAILY_DRAW
 }

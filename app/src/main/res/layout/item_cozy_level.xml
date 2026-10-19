@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_level"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/cat_puzzle_level_card_margin"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/cozy_card_background"
+    app:cardCornerRadius="@dimen/cat_puzzle_level_card_radius"
+    app:cardElevation="@dimen/card_elevation_subtle"
+    app:strokeColor="@color/cozy_card_stroke"
+    app:strokeWidth="@dimen/card_stroke_width">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/cat_puzzle_level_card_padding">
+
+        <!-- Top Left Level Badge -->
+        <TextView
+            android:id="@+id/tv_level_number"
+            android:layout_width="@dimen/cat_puzzle_level_badge_size"
+            android:layout_height="@dimen/cat_puzzle_level_badge_size"
+            android:background="@drawable/bg_level_badge"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textColor="@color/cozy_navy_text"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <!-- Thumbnail Preview -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_level_thumb"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/cat_puzzle_level_thumb_height"
+            android:layout_marginTop="4dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_level_number"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
+            tools:src="@drawable/img_puzzle_cute_cat" />
+
+        <!-- Locked Overlay -->
+        <FrameLayout
+            android:id="@+id/layout_locked_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#66D8EEF8"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_level_thumb"
+            app:layout_constraintEnd_toEndOf="@id/iv_level_thumb"
+            app:layout_constraintStart_toStartOf="@id/iv_level_thumb"
+            app:layout_constraintTop_toTopOf="@id/iv_level_thumb"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/cat_puzzle_lock_icon_size"
+                android:layout_height="@dimen/cat_puzzle_lock_icon_size"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lock_closed"
+                app:tint="@color/cozy_subtext" />
+
+        </FrameLayout>
+
+        <!-- Star Rating Row -->
+        <LinearLayout
+            android:id="@+id/layout_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_level_thumb">
+
+            <ImageView
+                android:id="@+id/iv_star_1"
+                android:layout_width="@dimen/cat_puzzle_level_star_size"
+                android:layout_height="@dimen/cat_puzzle_level_star_size"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageView
+                android:id="@+id/iv_star_2"
+                android:layout_width="@dimen/cat_puzzle_level_star_size"
+                android:layout_height="@dimen/cat_puzzle_level_star_size"
+                android:layout_marginStart="@dimen/spacing_micro"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageView
+                android:id="@+id/iv_star_3"
+                android:layout_width="@dimen/cat_puzzle_level_star_size"
+                android:layout_height="@dimen/cat_puzzle_level_star_size"
+                android:layout_marginStart="@dimen/spacing_micro"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_empty" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -2,39 +2,139 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/splashFragment">
+
+    <!-- Splash Screen -->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.cozypuzzle.presentation.splash.SplashFragment"
+        android:label="Splash">
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.cozypuzzle.presentation.home.HomeFragment"
         android:label="@string/tab_home">
         <action
-            android:id="@+id/action_home_to_basic_puzzle_select"
-            app:destination="@id/basicPuzzleSelectFragment" />
+            android:id="@+id/action_home_to_cat_puzzle_select"
+            app:destination="@id/catPuzzleLevelSelectFragment" />
         <action
-            android:id="@+id/action_home_to_cat_level_select"
-            app:destination="@id/catLevelSelectFragment" />
+            android:id="@+id/action_home_to_color_cat_select"
+            app:destination="@id/colorCatLevelSelectFragment" />
+        <action
+            android:id="@+id/action_home_to_slide_cat_select"
+            app:destination="@id/slideCatLevelSelectFragment" />
+        <action
+            android:id="@+id/action_home_to_find_pair_select"
+            app:destination="@id/findPairLevelSelectFragment" />
+        <action
+            android:id="@+id/action_home_to_daily_puzzle"
+            app:destination="@id/dailyPuzzleFragment" />
+        <action
+            android:id="@+id/action_home_to_daily_tasks"
+            app:destination="@id/dailyTasksFragment" />
+        <action
+            android:id="@+id/action_home_to_garden"
+            app:destination="@id/gardenFragment" />
+        <action
+            android:id="@+id/action_home_to_my_cats"
+            app:destination="@id/myCatsFragment" />
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <!-- Mode 1: Cat Puzzle -->
+    <fragment
+        android:id="@+id/catPuzzleLevelSelectFragment"
+        android:name="com.example.cozypuzzle.presentation.catpuzzle.select.CatPuzzleLevelSelectFragment"
+        android:label="@string/cat_puzzle_title">
+        <action
+            android:id="@+id/action_cat_puzzle_select_to_game"
+            app:destination="@id/catPuzzleGameFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/basicPuzzleSelectFragment"
-        android:name="com.example.cozypuzzle.presentation.puzzle.select.BasicPuzzleSelectFragment"
-        android:label="@string/game_mode_basic" />
+        android:id="@+id/catPuzzleGameFragment"
+        android:name="com.example.cozypuzzle.presentation.catpuzzle.game.CatPuzzleGameFragment"
+        android:label="@string/cat_puzzle_title" />
+
+    <!-- Mode 2: Color the Cat -->
+    <fragment
+        android:id="@+id/colorCatLevelSelectFragment"
+        android:name="com.example.cozypuzzle.presentation.colorthecat.select.ColorCatLevelSelectFragment"
+        android:label="@string/color_cat_title">
+        <action
+            android:id="@+id/action_color_cat_select_to_game"
+            app:destination="@id/colorCatGameFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/puzzleFragment"
-        android:name="com.example.cozypuzzle.presentation.puzzle.PuzzleFragment"
-        android:label="@string/game_mode_basic" />
+        android:id="@+id/colorCatGameFragment"
+        android:name="com.example.cozypuzzle.presentation.colorthecat.game.ColorCatGameFragment"
+        android:label="@string/color_cat_title" />
+
+    <!-- Mode 3: Slide the Cat -->
+    <fragment
+        android:id="@+id/slideCatLevelSelectFragment"
+        android:name="com.example.cozypuzzle.presentation.slidethecat.select.SlideCatLevelSelectFragment"
+        android:label="@string/slide_cat_title">
+        <action
+            android:id="@+id/action_slide_cat_select_to_game"
+            app:destination="@id/slideCatGameFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/catLevelSelectFragment"
-        android:name="com.example.cozypuzzle.presentation.cat.select.CatLevelSelectFragment"
-        android:label="@string/game_mode_find_my_cat" />
+        android:id="@+id/slideCatGameFragment"
+        android:name="com.example.cozypuzzle.presentation.slidethecat.game.SlideCatGameFragment"
+        android:label="@string/slide_cat_title" />
+
+    <!-- Mode 4: Find the Pair -->
+    <fragment
+        android:id="@+id/findPairLevelSelectFragment"
+        android:name="com.example.cozypuzzle.presentation.findpair.select.FindPairLevelSelectFragment"
+        android:label="@string/find_pair_title">
+        <action
+            android:id="@+id/action_find_pair_select_to_game"
+            app:destination="@id/findPairGameFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/catGameFragment"
-        android:name="com.example.cozypuzzle.presentation.cat.CatGameFragment"
-        android:label="@string/game_mode_find_my_cat" />
+        android:id="@+id/findPairGameFragment"
+        android:name="com.example.cozypuzzle.presentation.findpair.game.FindPairGameFragment"
+        android:label="@string/find_pair_title" />
+
+    <!-- Tab 2: My Cats Collection & Detail -->
+    <fragment
+        android:id="@+id/myCatsFragment"
+        android:name="com.example.cozypuzzle.presentation.mycats.collection.MyCatsFragment"
+        android:label="@string/tab_my_cats">
+        <action
+            android:id="@+id/action_my_cats_to_cat_detail"
+            app:destination="@id/catDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/catDetailFragment"
+        android:name="com.example.cozypuzzle.presentation.mycats.detail.CatDetailFragment"
+        android:label="@string/cat_detail_title" />
+
+    <!-- Additional Tabs & Screens -->
+    <!-- Tab 3: Daily Tasks -->
+    <fragment
+        android:id="@+id/dailyTasksFragment"
+        android:name="com.example.cozypuzzle.presentation.daily.tasks.DailyTasksFragment"
+        android:label="@string/daily_tasks_title" />
+
+    <fragment
+        android:id="@+id/dailyPuzzleFragment"
+        android:name="com.example.cozypuzzle.presentation.daily.DailyPuzzleFragment"
+        android:label="@string/daily_draw_title" />
 
     <fragment
         android:id="@+id/gardenFragment"

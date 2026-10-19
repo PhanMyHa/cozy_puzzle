@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDF7FE">
+
+    <!-- Splash Graphic Container maintaining exact 224:432 aspect ratio -->
+    <ImageView
+        android:id="@+id/iv_splash_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_splash_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="224:432"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Animated progress bar overlay precisely matching the loading pill -->
+    <ProgressBar
+        android:id="@+id/pb_splash_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/bg_splash_progress_pill"
+        app:layout_constraintBottom_toBottomOf="@id/iv_splash_bg"
+        app:layout_constraintEnd_toEndOf="@id/iv_splash_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_splash_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_splash_bg"
+        app:layout_constraintVertical_bias="0.886"
+        app:layout_constraintWidth_percent="0.67" />
+
+    <!-- Loading text label centered over pill -->
+    <TextView
+        android:id="@+id/tv_splash_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Loading..."
+        android:textColor="#30445C"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/pb_splash_progress"
+        app:layout_constraintEnd_toEndOf="@id/pb_splash_progress"
+        app:layout_constraintStart_toStartOf="@id/pb_splash_progress"
+        app:layout_constraintTop_toTopOf="@id/pb_splash_progress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

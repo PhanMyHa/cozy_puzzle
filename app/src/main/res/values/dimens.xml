@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General Spacing -->
+    <dimen name="spacing_none">0dp</dimen>
+    <dimen name="spacing_micro">2dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium_small">12dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">20dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+    <dimen name="spacing_xxlarge">28dp</dimen>
+    <dimen name="spacing_hero">32dp</dimen>
+
+    <!-- Card Radii and Styling (Style guide: 20-28dp, vien xanh nhat, do bong mem) -->
+    <dimen name="card_corner_radius_large">28dp</dimen>
+    <dimen name="card_corner_radius_medium">20dp</dimen>
+    <dimen name="card_corner_radius_small">16dp</dimen>
+    <dimen name="card_stroke_width">1.5dp</dimen>
+    <dimen name="card_elevation_soft">3dp</dimen>
+    <dimen name="card_elevation_subtle">2dp</dimen>
+
+    <!-- Button Dimensions (Style guide: dang pill) -->
+    <dimen name="button_corner_radius_pill">28dp</dimen>
+    <dimen name="button_height_pill">48dp</dimen>
+    <dimen name="button_padding_horizontal">20dp</dimen>
+
+    <!-- Home Header -->
+    <dimen name="home_header_padding_horizontal">16dp</dimen>
+    <dimen name="home_header_padding_top">16dp</dimen>
+    <dimen name="home_header_padding_bottom">8dp</dimen>
+    <dimen name="home_avatar_size">46dp</dimen>
+    <dimen name="home_avatar_border_width">2dp</dimen>
+    <dimen name="home_avatar_margin_end">10dp</dimen>
+    <dimen name="home_level_progress_width">72dp</dimen>
+    <dimen name="home_level_progress_height">8dp</dimen>
+    <dimen name="home_level_progress_radius">4dp</dimen>
+
+    <!-- Currency Pill -->
+    <dimen name="home_currency_pill_height">36dp</dimen>
+    <dimen name="home_currency_pill_padding_start">10dp</dimen>
+    <dimen name="home_currency_pill_padding_end">6dp</dimen>
+    <dimen name="home_currency_pill_radius">20dp</dimen>
+    <dimen name="home_currency_icon_size">20dp</dimen>
+    <dimen name="home_currency_plus_size">24dp</dimen>
+    <dimen name="home_currency_plus_icon_size">14dp</dimen>
+
+    <!-- Mascot & Speech Bubble -->
+    <dimen name="home_hero_min_height">210dp</dimen>
+    <dimen name="home_hero_mascot_width">180dp</dimen>
+    <dimen name="home_hero_mascot_height">150dp</dimen>
+    <dimen name="home_speech_bubble_padding_h">18dp</dimen>
+    <dimen name="home_speech_bubble_padding_v">12dp</dimen>
+    <dimen name="home_speech_bubble_radius">20dp</dimen>
+    <dimen name="home_speech_heart_size">14dp</dimen>
+    <dimen name="home_speech_margin_start">16dp</dimen>
+    <dimen name="home_speech_margin_top">16dp</dimen>
+
+    <!-- Featured Games Section -->
+    <dimen name="home_featured_sheet_radius_top">28dp</dimen>
+    <dimen name="home_featured_sheet_padding_h">16dp</dimen>
+    <dimen name="home_featured_sheet_padding_top">20dp</dimen>
+    <dimen name="home_featured_sheet_padding_bottom">16dp</dimen>
+    <dimen name="home_featured_header_paw_size">22dp</dimen>
+    <dimen name="home_featured_header_margin_bottom">12dp</dimen>
+
+    <!-- Game Card Grid -->
+    <dimen name="game_card_margin">6dp</dimen>
+    <dimen name="game_card_corner_radius">20dp</dimen>
+    <dimen name="game_card_inner_image_radius">14dp</dimen>
+    <dimen name="game_card_padding">8dp</dimen>
+    <dimen name="game_card_stroke_width">1.5dp</dimen>
+    <dimen name="game_card_elevation">2dp</dimen>
+    <dimen name="game_card_image_height">96dp</dimen>
+    <dimen name="game_card_bottom_padding_h">6dp</dimen>
+    <dimen name="game_card_bottom_padding_v">8dp</dimen>
+    <dimen name="game_card_chevron_size">16dp</dimen>
+
+    <!-- Indicator Dots -->
+    <dimen name="home_indicator_margin_top">14dp</dimen>
+    <dimen name="home_indicator_margin_bottom">16dp</dimen>
+    <dimen name="home_dot_active_width">18dp</dimen>
+    <dimen name="home_dot_inactive_width">8dp</dimen>
+    <dimen name="home_dot_height">8dp</dimen>
+    <dimen name="home_dot_radius">4dp</dimen>
+    <dimen name="home_dot_margin_horizontal">4dp</dimen>
+
+    <!-- Typography Text Sizes (sp) -->
+    <dimen name="text_size_level">14sp</dimen>
+    <dimen name="text_size_currency">15sp</dimen>
+    <dimen name="text_size_speech">14sp</dimen>
+    <dimen name="text_size_featured_title">18sp</dimen>
+    <dimen name="text_size_game_title">14sp</dimen>
+    <dimen name="text_size_tab_label">12sp</dimen>
+    <dimen name="text_size_button">16sp</dimen>
+
+    <!-- Cat Puzzle Specific Dimens -->
+    <dimen name="cat_puzzle_level_card_margin">6dp</dimen>
+    <dimen name="cat_puzzle_level_card_padding">6dp</dimen>
+    <dimen name="cat_puzzle_level_card_radius">20dp</dimen>
+    <dimen name="cat_puzzle_level_badge_size">22dp</dimen>
+    <dimen name="cat_puzzle_level_thumb_height">64dp</dimen>
+    <dimen name="cat_puzzle_level_thumb_radius">12dp</dimen>
+    <dimen name="cat_puzzle_level_star_size">14dp</dimen>
+    <dimen name="cat_puzzle_lock_icon_size">36dp</dimen>
+    <dimen name="cat_puzzle_board_margin_top">12dp</dimen>
+    <dimen name="cat_puzzle_board_max_size">320dp</dimen>
+    <dimen name="cat_puzzle_tray_height">76dp</dimen>
+    <dimen name="cat_puzzle_tray_piece_size">60dp</dimen>
+    <dimen name="cat_puzzle_tray_piece_margin">6dp</dimen>
+    <dimen name="cat_puzzle_button_icon_size">18dp</dimen>
+    <dimen name="cat_puzzle_dialog_radius">28dp</dimen>
+    <dimen name="cat_puzzle_dialog_peeking_cat_size">90dp</dimen>
+    <dimen name="cat_puzzle_complete_star_size">40dp</dimen>
+    <dimen name="cat_puzzle_complete_cat_size">110dp</dimen>
+
+    <!-- Color the Cat Specific Dimens -->
+    <dimen name="color_cat_board_margin">12dp</dimen>
+    <dimen name="color_cat_palette_height">56dp</dimen>
+    <dimen name="color_cat_palette_item_size">42dp</dimen>
+    <dimen name="color_cat_palette_inner_size">32dp</dimen>
+    <dimen name="color_cat_tool_btn_size">46dp</dimen>
+    <dimen name="color_cat_tool_icon_size">22dp</dimen>
+
+    <!-- Slide the Cat Specific Dimens -->
+    <dimen name="slide_cat_preview_thumb_size">56dp</dimen>
+    <dimen name="slide_cat_preview_thumb_radius">14dp</dimen>
+    <dimen name="slide_cat_board_margin">16dp</dimen>
+
+    <!-- Find the Pair Specific Dimens -->
+    <dimen name="find_pair_card_radius">18dp</dimen>
+    <dimen name="find_pair_card_margin">4dp</dimen>
+    <dimen name="find_pair_card_stroke_width">1.5dp</dimen>
+    <dimen name="find_pair_card_elevation">3dp</dimen>
+    <dimen name="find_pair_board_margin">14dp</dimen>
+
+    <!-- My Cats Specific Dimens -->
+    <dimen name="cat_card_radius">24dp</dimen>
+    <dimen name="cat_card_thumb_size">104dp</dimen>
+    <dimen name="cat_card_padding">12dp</dimen>
+    <dimen name="cat_detail_hero_size">190dp</dimen>
+    <dimen name="cat_detail_cushion_width">210dp</dimen>
+    <dimen name="cat_detail_cushion_height">65dp</dimen>
+    <dimen name="cat_interaction_btn_size">56dp</dimen>
+    <dimen name="cat_interaction_icon_size">26dp</dimen>
+</resources>

@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_tab_home"
-        android:title="@string/tab_home" />
+        android:icon="@drawable/ic_tab_games"
+        android:title="@string/tab_games" />
 
     <item
-        android:id="@+id/gardenFragment"
-        android:icon="@drawable/ic_tab_garden"
-        android:title="@string/tab_garden" />
+        android:id="@+id/myCatsFragment"
+        android:icon="@drawable/ic_tab_my_cats"
+        android:title="@string/tab_my_cats" />
 
     <item
-        android:id="@+id/shopFragment"
-        android:icon="@drawable/ic_tab_shop"
-        android:title="@string/tab_shop" />
+        android:id="@+id/dailyTasksFragment"
+        android:icon="@drawable/ic_tab_daily"
+        android:title="@string/tab_daily" />
 
     <item
         android:id="@+id/profileFragment"

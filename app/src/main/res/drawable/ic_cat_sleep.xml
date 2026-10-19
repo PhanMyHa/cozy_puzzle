@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Crescent Moon -->
+    <path
+        android:fillColor="#FF81D4FA"
+        android:pathData="M12.3,2a10,10 0 0,0 -1.9,0.18 10,10 0 1,1 11.42,11.42A10,10 0 0,1 12.3,2z"/>
+    <!-- Zzz letters -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF0288D1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M15,4 h4 l-4,5 h4 M11,10 h3 l-3,3.5 h3"/>
+</vector>

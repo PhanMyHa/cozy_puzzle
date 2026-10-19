@@ -33,7 +33,7 @@ class GameModeAdapter(
 
         fun bind(item: GameModeUiModel) {
             binding.gameModeTitle.setText(item.titleRes)
-            binding.gameModeIcon.setImageResource(item.iconRes)
+            binding.gameModeThumbnail.setImageResource(item.thumbnailRes)
             binding.root.setOnClickListener { onClick(item.mode) }
         }
     }

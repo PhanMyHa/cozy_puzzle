@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_piece"
+    android:layout_width="@dimen/cat_puzzle_tray_piece_size"
+    android:layout_height="@dimen/cat_puzzle_tray_piece_size"
+    android:layout_marginHorizontal="@dimen/spacing_tiny"
+    android:layout_marginVertical="@dimen/spacing_tiny"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/cat_puzzle_level_thumb_radius"
+    app:cardElevation="@dimen/card_elevation_subtle"
+    app:strokeColor="@color/cozy_card_stroke"
+    app:strokeWidth="@dimen/card_stroke_width">
+
+    <ImageView
+        android:id="@+id/iv_piece_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        tools:src="@drawable/img_puzzle_cute_cat" />
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/find_pair_card_margin">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/cozy_card_background"
+        app:cardCornerRadius="@dimen/find_pair_card_radius"
+        app:cardElevation="@dimen/find_pair_card_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/cozy_card_stroke"
+        app:strokeWidth="@dimen/find_pair_card_stroke_width">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Card Back View (Blue or Pink background with paw print) -->
+            <FrameLayout
+                android:id="@+id/layout_card_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cozy_pastel_blue">
+
+                <ImageView
+                    android:id="@+id/iv_paw_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_paw"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Card Front View (White background with cute cat illustration) -->
+            <FrameLayout
+                android:id="@+id/layout_card_front"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_cat_illustration"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter"
+                    tools:src="@drawable/img_puzzle_cute_cat" />
+
+                <!-- Matched subtle star badge -->
+                <ImageView
+                    android:id="@+id/iv_matched_star"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="6dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_star_yellow"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <!-- Hint highlight border -->
+            <View
+                android:id="@+id/view_hint_glow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_find_pair_hint_glow"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Left Card (Pastel Blue) -->
+    <path
+        android:fillColor="#FF83D4F7"
+        android:pathData="M3,5 C3,3.9 3.9,3 5,3 L10,3 C11.1,3 12,3.9 12,5 L12,19 C12,20.1 11.1,21 10,21 L5,21 C3.9,21 3,20.1 3,19 Z" />
+    <!-- Right Card (Pastel Pink) -->
+    <path
+        android:fillColor="#FFFFB6D2"
+        android:pathData="M12,5 C12,3.9 12.9,3 14,3 L19,3 C20.1,3 21,3.9 21,5 L21,19 C21,20.1 20.1,21 19,21 L14,21 C12.9,21 12,20.1 12,19 Z" />
+    <!-- White symbols on cards -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M7.5,10 C6.7,10 6,10.7 6,11.5 C6,12.7 7.5,14 7.5,14 C7.5,14 9,12.7 9,11.5 C9,10.7 8.3,10 7.5,10 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M16.5,10 C15.7,10 15,10.7 15,11.5 C15,12.7 16.5,14 16.5,14 C16.5,14 18,12.7 18,11.5 C18,10.7 17.3,10 16.5,10 Z" />
+</vector>

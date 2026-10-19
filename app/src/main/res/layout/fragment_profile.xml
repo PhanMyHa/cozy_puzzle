@@ -1,75 +1,708 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        app:cardBackgroundColor="?attr/colorPrimaryContainer"
-        app:cardCornerRadius="48dp"
-        app:cardElevation="0dp">
-
-        <ImageView
-            android:id="@+id/profile_avatar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/tab_profile"
-            android:padding="24dp"
-            android:src="@drawable/ic_tab_profile"
-            app:tint="?attr/colorOnPrimaryContainer" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/profile_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/player_default_name"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/profile_level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/profile_level_placeholder"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/profile_coins"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/coins_placeholder"
-        android:textSize="14sp" />
+    android:background="@color/cozy_bg_screen"
+    android:fillViewport="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing_xxlarge">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_edit_name"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_edit_name" />
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_large"
+            android:paddingBottom="@dimen/spacing_small">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_settings"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv_profile_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/profile_header_title"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Coin Balance Pill -->
+            <LinearLayout
+                android:id="@+id/layout_coins_pill"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_currency_pill"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_star_yellow" />
+
+                <TextView
+                    android:id="@+id/tv_player_coins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="300" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Player Card (Avatar, Nickname, Level, Edit) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_player_header"
+            style="@style/Widget.CozyPuzzle.Card"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_settings" />
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_small">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_large">
+
+                <!-- Avatar with Camera Badge -->
+                <FrameLayout
+                    android:id="@+id/layout_avatar_container"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/cozy_pastel_pink_light"
+                        app:cardCornerRadius="48dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/cozy_pastel_pink"
+                        app:strokeWidth="2dp">
+
+                        <ImageView
+                            android:id="@+id/iv_profile_avatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/profile_avatar_cd"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_puzzle_cute_cat" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_camera_badge"
+                        android:gravity="center"
+                        android:text="📷"
+                        android:textSize="14sp" />
+
+                </FrameLayout>
+
+                <!-- Nickname with Edit Action -->
+                <LinearLayout
+                    android:id="@+id/layout_edit_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_player_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="Cozy Cat" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_edit_pencil"
+                        app:tint="@color/cozy_pastel_pink_dark" />
+
+                </LinearLayout>
+
+                <!-- Level & Progress Row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_currency_pill"
+                    android:backgroundTint="@color/cozy_pastel_blue_container"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:id="@+id/tv_player_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:text="Lv. 1" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_player_level"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="72dp"
+                        android:layout_height="8dp"
+                        android:layout_marginStart="10dp"
+                        android:max="100"
+                        android:progressDrawable="@drawable/progress_level_capsule"
+                        tools:progress="60" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stats Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_player_stats"
+            style="@style/Widget.CozyPuzzle.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_medium">
+
+                <!-- Title Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_paw" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/profile_stats_title"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Stats 2x2 Grid -->
+                <!-- Row 1: Stars & Levels -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- Stat 1: Total Stars -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_day_item_normal"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_stat_total_stars"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_stat_stars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="24 ⭐" />
+
+                    </LinearLayout>
+
+                    <!-- Stat 2: Levels Done -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_day_item_normal"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_stat_levels_completed"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_stat_levels"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="10 🧩" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Row 2: Cats & Streak -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- Stat 3: Cats Collected -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_day_item_normal"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_stat_cats_collected"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_stat_cats"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="4/12 🐾" />
+
+                    </LinearLayout>
+
+                    <!-- Stat 4: Daily Streak -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_day_item_normal"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_stat_daily_streak"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_stat_streak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="3 Days 🔥" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Achievements Section Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/profile_achievements_title"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_achievements_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cozy_subtext"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="2/7 Unlocked" />
+
+        </LinearLayout>
+
+        <!-- Achievements RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_achievements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_achievement" />
+
+        <!-- Settings Section Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/profile_settings_title"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Settings Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_settings"
+            style="@style/Widget.CozyPuzzle.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/spacing_medium"
+                android:paddingVertical="@dimen/spacing_small">
+
+                <!-- Sound Effects Switch -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_setting_sound"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/profile_setting_sound_desc"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_sound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/cozy_pastel_pink"
+                        app:trackTint="@color/cozy_pastel_pink_light" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cozy_card_stroke" />
+
+                <!-- Background Music Switch -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_setting_music"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/profile_setting_music_desc"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_music"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/cozy_pastel_pink"
+                        app:trackTint="@color/cozy_pastel_pink_light" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cozy_card_stroke" />
+
+                <!-- Vibration Switch -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_setting_vibration"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/profile_setting_vibration_desc"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_vibration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/cozy_pastel_pink"
+                        app:trackTint="@color/cozy_pastel_pink_light" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cozy_card_stroke" />
+
+                <!-- Privacy Policy Row -->
+                <LinearLayout
+                    android:id="@+id/row_privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/profile_setting_privacy"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/cozy_subtext" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cozy_card_stroke" />
+
+                <!-- Terms of Service Row -->
+                <LinearLayout
+                    android:id="@+id/row_terms_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/profile_setting_terms"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/cozy_subtext" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cozy_card_stroke" />
+
+                <!-- App Version Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/profile_setting_version"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_app_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cozy_subtext"
+                        android:textSize="13sp"
+                        tools:text="1.0" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cute Mascot Footer -->
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:contentDescription="@null"
+            android:src="@drawable/img_puzzle_cute_cat" />
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>
