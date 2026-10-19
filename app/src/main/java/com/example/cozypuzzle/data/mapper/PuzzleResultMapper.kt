@@ -14,18 +14,22 @@ fun PuzzleResult.toEntity(): PuzzleResultEntity = PuzzleResultEntity(
     durationMs = durationMs,
     moveCount = moveCount,
     hintsUsed = hintsUsed,
+    attemptCount = attempts,
+    brushColorId = brushColorId,
     completedAtEpochMs = completedAtEpochMs
 )
 
 fun PuzzleResultEntity.toDomain(): PuzzleResult = PuzzleResult(
     id = id,
     puzzleId = puzzleId,
-    mode = PuzzleMode.valueOf(puzzleMode),
+    mode = runCatching { PuzzleMode.valueOf(puzzleMode) }.getOrDefault(PuzzleMode.DAILY_DRAW),
     difficulty = Difficulty.valueOf(difficulty),
     rows = rows,
     columns = columns,
     durationMs = durationMs,
     moveCount = moveCount,
     hintsUsed = hintsUsed,
+    attempts = attemptCount,
+    brushColorId = brushColorId,
     completedAtEpochMs = completedAtEpochMs
 )

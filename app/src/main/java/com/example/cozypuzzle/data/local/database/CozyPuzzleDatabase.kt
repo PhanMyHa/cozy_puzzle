@@ -27,7 +27,7 @@ import com.example.cozypuzzle.data.local.entity.PuzzleSessionEntity
         InventoryItemEntity::class,
         AchievementEntity::class
     ],
-    version = 2,
+    version = 4,
     exportSchema = true
 )
 abstract class CozyPuzzleDatabase : RoomDatabase() {

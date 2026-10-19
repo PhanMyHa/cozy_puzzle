@@ -8,6 +8,11 @@ sealed interface GardenEvent {
         val id: String
     ) : GardenEvent
 
+    /** Places a new decoration of the given palette type. */
+    data class PlaceItem(
+        val itemType: String
+    ) : GardenEvent
+
     data class MoveItem(
         val id: String,
         val x: Float,

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Big Pad -->
+    <path
+        android:fillColor="#FFF06292"
+        android:pathData="M12,12 C9.8,12 8,13.8 8,16 C8,18.2 9.8,20 12,20 C14.2,20 16,18.2 16,16 C16,13.8 14.2,12 12,12 Z"/>
+    <!-- Toe 1 -->
+    <path
+        android:fillColor="#FFF06292"
+        android:pathData="M6,10 a2,2.5 0 1,0 4,0 a2,2.5 0 1,0 -4,0 Z"/>
+    <!-- Toe 2 -->
+    <path
+        android:fillColor="#FFF06292"
+        android:pathData="M10,6.5 a2,2.5 0 1,0 4,0 a2,2.5 0 1,0 -4,0 Z"/>
+    <!-- Toe 3 -->
+    <path
+        android:fillColor="#FFF06292"
+        android:pathData="M14,6.5 a2,2.5 0 1,0 4,0 a2,2.5 0 1,0 -4,0 Z"/>
+    <!-- Toe 4 -->
+    <path
+        android:fillColor="#FFF06292"
+        android:pathData="M18,10 a2,2.5 0 1,0 4,0 a2,2.5 0 1,0 -4,0 Z"/>
+</vector>

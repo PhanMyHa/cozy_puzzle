@@ -1,0 +1,92 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Sky / background circle -->
+    <path
+        android:fillColor="#FFE8F5E9"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0"/>
+
+    <!-- Left Ear -->
+    <path
+        android:fillColor="#FFFFCC80"
+        android:pathData="M55,75 L40,35 Q65,40 80,60 Z"/>
+    <path
+        android:fillColor="#FFFFAB91"
+        android:pathData="M55,65 L46,42 Q60,45 70,55 Z"/>
+
+    <!-- Right Ear -->
+    <path
+        android:fillColor="#FFFFCC80"
+        android:pathData="M120,60 Q135,40 160,35 L145,75 Z"/>
+    <path
+        android:fillColor="#FFFFAB91"
+        android:pathData="M130,55 Q140,45 154,42 L145,65 Z"/>
+
+    <!-- Beret Hat -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M70,50 C60,30 140,30 130,50 C145,55 125,65 100,65 C75,65 55,55 70,50 Z"/>
+    <path
+        android:fillColor="#FFFF4081"
+        android:pathData="M97,32 C97,28 103,28 103,32 C103,36 97,36 97,32 Z"/>
+
+    <!-- Cat Head -->
+    <path
+        android:fillColor="#FFFFF9C4"
+        android:pathData="M60,70 C40,90 40,120 70,135 C90,145 110,145 130,135 C160,120 160,90 140,70 C125,60 75,60 60,70 Z"/>
+
+    <!-- Cheeks blush -->
+    <path
+        android:fillColor="#FFFFCDD2"
+        android:pathData="M58,110 C58,104 68,104 68,110 C68,116 58,116 58,110 Z"/>
+    <path
+        android:fillColor="#FFFFCDD2"
+        android:pathData="M132,110 C132,104 142,104 142,110 C142,116 132,116 132,110 Z"/>
+
+    <!-- Closed Eyes -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF1E3A5F"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M72,100 Q80,108 88,100 M112,100 Q120,108 128,100"/>
+
+    <!-- Nose & Mouth -->
+    <path
+        android:fillColor="#FFFB8C00"
+        android:pathData="M98,108 L102,108 L100,111 Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF1E3A5F"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M100,111 Q96,117 92,115 M100,111 Q104,117 108,115"/>
+
+    <!-- Body -->
+    <path
+        android:fillColor="#FFFFF9C4"
+        android:pathData="M70,135 C50,150 50,180 75,185 L125,185 C150,180 150,150 130,135 Z"/>
+
+    <!-- Scarf -->
+    <path
+        android:fillColor="#FF80D8FF"
+        android:pathData="M72,135 C90,143 110,143 128,135 L125,145 C110,153 90,153 75,145 Z"/>
+
+    <!-- Artist Palette in paw -->
+    <path
+        android:fillColor="#FFFFE082"
+        android:pathData="M130,155 C120,145 140,135 155,145 C165,155 160,175 145,175 C135,175 130,165 130,155 Z"/>
+    <path
+        android:fillColor="#FFFF5252"
+        android:pathData="M140,150 C140,147 145,147 145,150 C145,153 140,153 140,150 Z"/>
+    <path
+        android:fillColor="#FF448AFF"
+        android:pathData="M150,155 C150,152 155,152 155,155 C155,158 150,158 150,155 Z"/>
+    <path
+        android:fillColor="#FF69F0AE"
+        android:pathData="M142,163 C142,160 147,160 147,163 C147,166 142,166 142,163 Z"/>
+
+</vector>

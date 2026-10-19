@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cozy_bg_screen">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:paddingBottom="@dimen/spacing_xxlarge">
+
+            <!-- Top Header (Title + Star Balance) -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_paw"
+                        app:tint="@color/cozy_pastel_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/my_cats_title"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Currency Pill -->
+                <LinearLayout
+                    android:id="@+id/layout_currency_pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/home_currency_pill_height"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_currency_pill"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/home_currency_pill_padding_start"
+                    android:paddingEnd="@dimen/home_currency_pill_padding_end">
+
+                    <ImageView
+                        android:layout_width="@dimen/home_currency_icon_size"
+                        android:layout_height="@dimen/home_currency_icon_size"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_star_yellow" />
+
+                    <TextView
+                        android:id="@+id/tv_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="120" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!-- Hero Banner Card (Speech bubble + Milo mascot) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardBackgroundColor="@color/cozy_pastel_blue_container"
+                app:cardCornerRadius="@dimen/card_corner_radius_large"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/cozy_pastel_blue_light"
+                app:strokeWidth="1.5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/spacing_medium"
+                    android:paddingVertical="@dimen/spacing_small">
+
+                    <!-- Speech text -->
+                    <TextView
+                        android:id="@+id/tv_banner_speech"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_small"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/my_cats_subtitle"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_banner_cat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Cat mascot illustration -->
+                    <ImageView
+                        android:id="@+id/iv_banner_cat"
+                        android:layout_width="100dp"
+                        android:layout_height="90dp"
+                        android:contentDescription="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_cat_milo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Collection Progress Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardBackgroundColor="@color/cozy_card_background"
+                app:cardCornerRadius="@dimen/card_corner_radius_medium"
+                app:cardElevation="@dimen/card_elevation_subtle"
+                app:strokeColor="@color/cozy_card_stroke"
+                app:strokeWidth="@dimen/card_stroke_width">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <!-- Progress Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_collection_progress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:text="🐾 8/12 Cats" />
+
+                        <TextView
+                            android:id="@+id/tv_collection_percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="67%" />
+
+                    </LinearLayout>
+
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/pb_collection"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:max="100"
+                        android:progressDrawable="@drawable/progress_level_capsule"
+                        tools:progress="67" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Filter Pills (All, Owned, Locked) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_filter_all"
+                    style="@style/Widget.CozyPuzzle.Button.Pill.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/my_cats_filter_all"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_filter_owned"
+                    style="@style/Widget.CozyPuzzle.Button.Pill.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/my_cats_filter_owned"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_filter_locked"
+                    style="@style/Widget.CozyPuzzle.Button.Pill.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/my_cats_filter_locked"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <!-- Cats Grid Recycler (2 Columns) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_cats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                tools:itemCount="6"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_my_cat"
+                tools:spanCount="2" />
+
+            <!-- Empty State -->
+            <LinearLayout
+                android:id="@+id/layout_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_paw"
+                    app:tint="@color/cozy_subtext" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:text="@string/my_cats_empty_title"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/my_cats_empty_desc"
+                    android:textColor="@color/cozy_subtext"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

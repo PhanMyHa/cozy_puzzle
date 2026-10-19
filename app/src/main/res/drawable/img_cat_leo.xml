@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Cosmic Lavender Halo -->
+    <path
+        android:fillColor="#E6EDE7F6"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0"/>
+
+    <!-- Antenna -->
+    <path
+        android:strokeColor="#FF81D4FA"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M100,28 L100,42"/>
+    <path
+        android:fillColor="#FFFFD54F"
+        android:pathData="M97,25 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z"/>
+
+    <!-- Astronaut Helmet Ring Outer -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:strokeColor="#FF81D4FA"
+        android:strokeWidth="3.5"
+        android:pathData="M100,95m-64,0a64,64 0,1 1,128 0a64,64 0,1 1,-128 0"/>
+
+    <!-- Helmet Visor Reflection -->
+    <path
+        android:fillColor="#1A81D4FA"
+        android:pathData="M100,95m-58,0a58,58 0,1 1,116 0a58,58 0,1 1,-116 0"/>
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M60,65 C75,50 115,48 135,55 C125,50 85,50 70,68 Z"/>
+
+    <!-- Left Ear (Inside Helmet) -->
+    <path
+        android:fillColor="#FFB0BEC5"
+        android:pathData="M65,72 L52,48 Q70,50 80,64 Z"/>
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M65,66 L58,54 Q68,55 74,62 Z"/>
+
+    <!-- Right Ear (Inside Helmet) -->
+    <path
+        android:fillColor="#FFB0BEC5"
+        android:pathData="M120,64 Q130,50 148,48 L135,72 Z"/>
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M126,62 Q132,55 142,54 L135,66 Z"/>
+
+    <!-- Cat Head Inside Visor -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M62,90 C55,110 58,135 80,144 C95,150 105,150 120,144 C142,135 145,110 138,90 C130,76 70,76 62,90 Z"/>
+
+    <!-- Cheeks Blush -->
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M70,118 a7,4 0 1,0 14,0 a7,4 0 1,0 -14,0 Z"/>
+    <path
+        android:fillColor="#80FF80AB"
+        android:pathData="M116,118 a7,4 0 1,0 14,0 a7,4 0 1,0 -14,0 Z"/>
+
+    <!-- Big Cosmic Eyes -->
+    <path
+        android:fillColor="#FF311B92"
+        android:pathData="M80,110 a5.5,6.5 0 1,0 11,0 a5.5,6.5 0 1,0 -11,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M82,108 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+    <path
+        android:fillColor="#FF311B92"
+        android:pathData="M109,110 a5.5,6.5 0 1,0 11,0 a5.5,6.5 0 1,0 -11,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M111,108 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z"/>
+
+    <!-- Nose & Happy Mouth -->
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M98,118 L102,118 L100,121 Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF263238"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M96,122 Q100,125 100,122 Q100,125 104,122"/>
+
+    <!-- Spacesuit Collar & Chest Badge -->
+    <path
+        android:fillColor="#FFCFD8DC"
+        android:pathData="M70,158 C70,152 130,152 130,158 C130,165 70,165 70,158 Z"/>
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M97,162 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z"/>
+
+    <!-- Little Paws in Suit -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M74,168 a8,6 0 1,0 16,0 a8,6 0 1,0 -16,0 Z M110,168 a8,6 0 1,0 16,0 a8,6 0 1,0 -16,0 Z"/>
+</vector>

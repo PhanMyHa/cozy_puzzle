@@ -12,10 +12,10 @@ import com.example.cozypuzzle.R
 import com.example.cozypuzzle.core.ui.BaseFragment
 import com.example.cozypuzzle.databinding.FragmentHomeBinding
 import com.example.cozypuzzle.presentation.home.adapter.GameModeAdapter
+import com.example.cozypuzzle.presentation.starshop.StarShopBottomSheetFragment
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.Calendar
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -38,9 +38,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.gameModesRecycler.adapter = gameModeAdapter
     }
 
+    private var currentAvatarUri: String? = "__initial__"
+
     private fun setupListeners() {
-        binding.btnPlayDaily.setOnClickListener {
+        binding.ivPlayerAvatar.setOnClickListener {
+            val bottomNav = requireActivity().findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_navigation)
+            if (bottomNav != null) {
+                bottomNav.selectedItemId = R.id.profileFragment
+            } else {
+                val nav = findNavController()
+                if (nav.currentDestination?.id == R.id.homeFragment) {
+                    nav.navigate(R.id.action_home_to_profile)
+                }
+            }
+        }
+        binding.layoutSpeechBubble.setOnClickListener {
             viewModel.onEvent(HomeEvent.DailyPuzzleClicked)
+        }
+        binding.ivCatMascot.setOnClickListener {
+            viewModel.onEvent(HomeEvent.DailyPuzzleClicked)
+        }
+        binding.layoutCurrencyPill.setOnClickListener {
+            StarShopBottomSheetFragment.newInstance()
+                .show(childFragmentManager, StarShopBottomSheetFragment.TAG)
         }
     }
 
@@ -61,11 +81,35 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     private fun render(state: HomeUiState) {
-        val playerName = state.playerName.ifBlank { getString(R.string.player_default_name) }
-        binding.homeGreeting.text = getString(greetingRes(), playerName)
-        binding.dailyPuzzleSize.text =
-            getString(R.string.daily_puzzle_size_format, state.dailyPuzzleSize)
+        binding.tvPlayerLevel.text = getString(R.string.home_level_format, state.playerLevel)
+        binding.tvStarCount.text = state.playerCoins.toString()
+        binding.pbLevelProgress.progress = state.levelProgress
         gameModeAdapter.submitList(state.gameModes)
+
+        renderAvatar(state.avatarUri)
+    }
+
+    private fun renderAvatar(avatarUri: String?) {
+        if (avatarUri == currentAvatarUri) return
+        currentAvatarUri = avatarUri
+
+        if (!avatarUri.isNullOrBlank()) {
+            try {
+                val file = java.io.File(avatarUri)
+                if (file.exists()) {
+                    val bitmap = android.graphics.BitmapFactory.decodeFile(file.absolutePath)
+                    if (bitmap != null) {
+                        binding.ivPlayerAvatar.setImageBitmap(bitmap)
+                        binding.ivPlayerAvatar.scaleType = android.widget.ImageView.ScaleType.CENTER_CROP
+                        return
+                    }
+                }
+            } catch (_: Exception) {
+            }
+        }
+        // Always fall back to cute default cat avatar so it is never blank or broken
+        binding.ivPlayerAvatar.setImageResource(DEFAULT_AVATAR_RES)
+        binding.ivPlayerAvatar.scaleType = android.widget.ImageView.ScaleType.CENTER_CROP
     }
 
     private fun handleEffect(effect: HomeEffect) {
@@ -73,31 +117,41 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             HomeEffect.FeatureComingSoon ->
                 Snackbar.make(binding.root, R.string.feature_coming_soon, Snackbar.LENGTH_SHORT)
                     .show()
-            HomeEffect.NavigateToBasicPuzzles -> {
+            HomeEffect.NavigateToDailyPuzzle -> {
                 val nav = findNavController()
                 if (nav.currentDestination?.id == R.id.homeFragment) {
-                    nav.navigate(R.id.action_home_to_basic_puzzle_select)
+                    nav.navigate(R.id.action_home_to_daily_puzzle)
                 }
             }
-            HomeEffect.NavigateToCatLevels -> {
+            HomeEffect.NavigateToCatPuzzle -> {
                 val nav = findNavController()
                 if (nav.currentDestination?.id == R.id.homeFragment) {
-                    nav.navigate(R.id.action_home_to_cat_level_select)
+                    nav.navigate(R.id.action_home_to_cat_puzzle_select)
                 }
             }
-        }
-    }
-
-    private fun greetingRes(): Int {
-        val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
-        return when (hour) {
-            in 5..11 -> R.string.greeting_morning
-            in 12..17 -> R.string.greeting_afternoon
-            else -> R.string.greeting_evening
+            HomeEffect.NavigateToColorCatSelect -> {
+                val nav = findNavController()
+                if (nav.currentDestination?.id == R.id.homeFragment) {
+                    nav.navigate(R.id.action_home_to_color_cat_select)
+                }
+            }
+            HomeEffect.NavigateToSlideCatSelect -> {
+                val nav = findNavController()
+                if (nav.currentDestination?.id == R.id.homeFragment) {
+                    nav.navigate(R.id.action_home_to_slide_cat_select)
+                }
+            }
+            HomeEffect.NavigateToFindPairSelect -> {
+                val nav = findNavController()
+                if (nav.currentDestination?.id == R.id.homeFragment) {
+                    nav.navigate(R.id.action_home_to_find_pair_select)
+                }
+            }
         }
     }
 
     private companion object {
         const val GRID_SPAN = 2
+        val DEFAULT_AVATAR_RES = R.drawable.img_cat_milo
     }
 }

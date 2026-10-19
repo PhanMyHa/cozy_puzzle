@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="60dp"
+    android:viewportWidth="200"
+    android:viewportHeight="60">
+
+    <!-- Cushion Shadow -->
+    <path
+        android:fillColor="#151E3A5F"
+        android:pathData="M15,35 C15,48 50,56 100,56 C150,56 185,48 185,35 C185,22 150,14 100,14 C50,14 15,22 15,35 Z" />
+
+    <!-- Cushion Bottom/Rim -->
+    <path
+        android:fillColor="#FFFFB6D2"
+        android:pathData="M10,28 C10,44 48,52 100,52 C152,52 190,44 190,28 C190,20 165,14 100,14 C35,14 10,20 10,28 Z" />
+
+    <!-- Cushion Top Surface -->
+    <path
+        android:fillColor="#FFFFE4EE"
+        android:pathData="M14,24 C14,38 52,46 100,46 C148,46 186,38 186,24 C186,10 148,4 100,4 C52,4 14,10 14,24 Z" />
+
+    <!-- Quilted Tufts / Soft Dimples -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M60,22 a3,2 0 1,0 6,0 a3,2 0 1,0 -6,0 Z M100,20 a3,2 0 1,0 6,0 a3,2 0 1,0 -6,0 Z M140,22 a3,2 0 1,0 6,0 a3,2 0 1,0 -6,0 Z" />
+</vector>

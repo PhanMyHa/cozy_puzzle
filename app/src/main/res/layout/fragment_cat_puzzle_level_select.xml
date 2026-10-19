@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_hero_sky"
+    android:orientation="vertical">
+
+    <!-- Header Row -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/home_header_padding_horizontal"
+        android:paddingTop="@dimen/home_header_padding_top"
+        android:paddingEnd="@dimen/home_header_padding_horizontal"
+        android:paddingBottom="@dimen/spacing_small">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/home_avatar_size"
+            android:layout_height="@dimen/home_avatar_size"
+            android:background="@drawable/bg_circle_button"
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/layout_currency_pill"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/home_featured_header_paw_size"
+                android:layout_height="@dimen/home_featured_header_paw_size"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_tab_my_cats"
+                app:tint="@color/cozy_pastel_blue_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_tiny"
+                android:text="@string/cat_puzzle_title"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="@dimen/text_size_featured_title"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Currency Pill -->
+        <LinearLayout
+            android:id="@+id/layout_currency_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_currency_pill_height"
+            android:background="@drawable/bg_currency_pill"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/home_currency_pill_padding_start"
+            android:paddingEnd="@dimen/home_currency_pill_padding_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/home_currency_icon_size"
+                android:layout_height="@dimen/home_currency_icon_size"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+            <TextView
+                android:id="@+id/tv_star_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_tiny"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="@dimen/text_size_currency"
+                android:textStyle="bold"
+                tools:text="120" />
+
+            <FrameLayout
+                android:layout_width="@dimen/home_currency_plus_size"
+                android:layout_height="@dimen/home_currency_plus_size"
+                android:background="@drawable/bg_plus_circle">
+
+                <ImageView
+                    android:layout_width="@dimen/home_currency_plus_icon_size"
+                    android:layout_height="@dimen/home_currency_plus_icon_size"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_plus_white" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Mascot & Speech Bubble Banner -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/home_header_padding_horizontal"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingEnd="@dimen/home_header_padding_horizontal"
+        android:paddingBottom="@dimen/spacing_medium">
+
+        <ImageView
+            android:id="@+id/iv_banner_mascot"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_puzzle_cute_cat" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_weight="1"
+            android:background="@drawable/bg_speech_bubble"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingVertical="@dimen/spacing_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/cat_puzzle_banner_speech"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="@dimen/text_size_game_title"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Difficulty Tabs Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/home_header_padding_horizontal"
+        android:paddingBottom="@dimen/spacing_medium">
+
+        <TextView
+            android:id="@+id/btn_tab_basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_pill_selected"
+            android:paddingHorizontal="@dimen/spacing_large"
+            android:paddingVertical="@dimen/spacing_small"
+            android:text="@string/cat_puzzle_tab_basic"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_tab_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btn_tab_intermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:background="@drawable/bg_tab_pill_unselected"
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingVertical="@dimen/spacing_small"
+            android:text="@string/cat_puzzle_tab_intermediate"
+            android:textColor="@color/cozy_subtext"
+            android:textSize="@dimen/text_size_tab_label" />
+
+        <TextView
+            android:id="@+id/btn_tab_hard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:background="@drawable/bg_tab_pill_unselected"
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingVertical="@dimen/spacing_small"
+            android:text="@string/cat_puzzle_tab_hard"
+            android:textColor="@color/cozy_subtext"
+            android:textSize="@dimen/text_size_tab_label" />
+
+    </LinearLayout>
+
+    <!-- Levels Grid Container (White Rounded Sheet) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_featured_sheet"
+        android:elevation="@dimen/card_elevation_soft"
+        android:paddingHorizontal="@dimen/home_featured_sheet_padding_h"
+        android:paddingTop="@dimen/home_featured_sheet_padding_top"
+        android:paddingBottom="@dimen/spacing_small">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/levels_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            tools:itemCount="9"
+            tools:listitem="@layout/item_cat_puzzle_level" />
+
+    </FrameLayout>
+
+</LinearLayout>

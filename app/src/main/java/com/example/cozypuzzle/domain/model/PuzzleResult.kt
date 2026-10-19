@@ -13,6 +13,13 @@ data class PuzzleResult(
     val durationMs: Long,
     val moveCount: Int,
     val hintsUsed: Int,
+
+    /** Only used by the Daily Draw mode; null for other modes. */
+    val attempts: Int? = null,
+
+    /** Only used by the Daily Draw mode; null for other modes. */
+    val brushColorId: String? = null,
+
     val completedAtEpochMs: Long
 ) {
     val isPerfect: Boolean

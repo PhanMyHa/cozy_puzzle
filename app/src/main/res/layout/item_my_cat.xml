@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_cat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/cozy_card_background"
+    app:cardCornerRadius="@dimen/cat_card_radius"
+    app:cardElevation="@dimen/card_elevation_subtle"
+    app:strokeColor="@color/cozy_card_stroke"
+    app:strokeWidth="@dimen/card_stroke_width">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/cat_card_padding">
+
+        <!-- Image with Optional Locked Silhouette Overlay -->
+        <FrameLayout
+            android:layout_width="@dimen/cat_card_thumb_size"
+            android:layout_height="@dimen/cat_card_thumb_size"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:id="@+id/iv_cat_thumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                tools:src="@drawable/img_cat_milo" />
+
+            <!-- Locked Overlay -->
+            <FrameLayout
+                android:id="@+id/layout_locked_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#778097AC"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_lock_closed"
+                    app:tint="@color/white" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <!-- Cat Name -->
+        <TextView
+            android:id="@+id/tv_cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textColor="@color/cozy_navy_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="Milo" />
+
+        <!-- Rarity Badge -->
+        <TextView
+            android:id="@+id/tv_cat_rarity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_currency_pill"
+            android:backgroundTint="@color/cozy_rarity_common_bg"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:textColor="@color/cozy_rarity_common"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            tools:text="Common" />
+
+        <!-- Owned State: Stars or Category -->
+        <LinearLayout
+            android:id="@+id/layout_owned_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_cat_star1"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+            <ImageView
+                android:id="@+id/iv_cat_star2"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="2dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+            <ImageView
+                android:id="@+id/iv_cat_star3"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="2dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+        </LinearLayout>
+
+        <!-- Locked State: Unlock Requirement Hint -->
+        <TextView
+            android:id="@+id/tv_cat_unlock_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/cozy_subtext"
+            android:textSize="11sp"
+            android:visibility="gone"
+            tools:text="Complete 5 levels"
+            tools:visibility="gone" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

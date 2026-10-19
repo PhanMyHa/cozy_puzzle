@@ -3,7 +3,6 @@ package com.example.cozypuzzle.presentation.home
 import androidx.lifecycle.viewModelScope
 import com.example.cozypuzzle.core.puzzle.model.PuzzleMode
 import com.example.cozypuzzle.core.ui.BaseViewModel
-import com.example.cozypuzzle.domain.usecase.puzzle.GetBasicPuzzleConfigUseCase
 import com.example.cozypuzzle.domain.usecase.profile.GetProfileUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.BufferOverflow
@@ -13,15 +12,13 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    getProfileUseCase: GetProfileUseCase,
-    getBasicPuzzleConfigUseCase: GetBasicPuzzleConfigUseCase
+    getProfileUseCase: GetProfileUseCase
 ) : BaseViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
@@ -35,16 +32,15 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            combine(
-                getProfileUseCase(),
-                getBasicPuzzleConfigUseCase()
-            ) { player, basicPuzzleConfig ->
-                player to basicPuzzleConfig
-            }.collect { (player, basicPuzzleConfig) ->
+            getProfileUseCase().collect { player ->
                 _uiState.update { state ->
                     state.copy(
                         playerName = player.name,
-                        dailyPuzzleSize = basicPuzzleConfig.defaultSize,
+                        avatarUri = player.avatarUri,
+                        playerLevel = player.level,
+                        playerCoins = player.coins,
+                        levelProgress = ((player.coins % 100).coerceIn(20, 85)),
+                        dailyPuzzleSize = 4,
                         gameModes = HomeUiState.defaultGameModes(),
                         isLoading = false
                     )
@@ -56,13 +52,15 @@ class HomeViewModel @Inject constructor(
     fun onEvent(event: HomeEvent) {
         when (event) {
             HomeEvent.DailyPuzzleClicked ->
-                _effects.tryEmit(HomeEffect.FeatureComingSoon)
+                _effects.tryEmit(HomeEffect.NavigateToDailyPuzzle)
             is HomeEvent.GameModeClicked ->
                 _effects.tryEmit(
                     when (event.mode) {
-                        PuzzleMode.BASIC -> HomeEffect.NavigateToBasicPuzzles
-                        PuzzleMode.FIND_MY_CAT -> HomeEffect.NavigateToCatLevels
-                        else -> HomeEffect.FeatureComingSoon
+                        PuzzleMode.CAT_PUZZLE -> HomeEffect.NavigateToCatPuzzle
+                        PuzzleMode.COLOR_THE_CAT -> HomeEffect.NavigateToColorCatSelect
+                        PuzzleMode.SLIDE_THE_CAT -> HomeEffect.NavigateToSlideCatSelect
+                        PuzzleMode.FIND_THE_PAIR -> HomeEffect.NavigateToFindPairSelect
+                        PuzzleMode.DAILY_DRAW -> HomeEffect.NavigateToDailyPuzzle
                     }
                 )
         }

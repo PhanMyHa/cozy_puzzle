@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cozy_bg_screen">
+
+    <!-- Header Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/home_header_padding_horizontal"
+        android:paddingTop="@dimen/home_header_padding_top"
+        android:paddingBottom="@dimen/home_header_padding_bottom"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/home_currency_pill_height"
+            android:layout_height="@dimen/home_currency_pill_height"
+            android:background="@drawable/bg_circle_button"
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layout_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/layout_stars_pill"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_paw" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/find_pair_title"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_stars_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/home_currency_pill_height"
+            android:background="@drawable/bg_currency_pill"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/home_currency_pill_padding_start"
+            android:paddingEnd="@dimen/home_currency_pill_padding_start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/home_currency_icon_size"
+                android:layout_height="@dimen/home_currency_icon_size"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+            <TextView
+                android:id="@+id/tv_total_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="@dimen/text_size_currency"
+                android:textStyle="bold"
+                tools:text="120" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Difficulty Tabs Row: Easy, Medium, Hard -->
+    <LinearLayout
+        android:id="@+id/layout_difficulty_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_header">
+
+        <TextView
+            android:id="@+id/tab_easy"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_pill_selected"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/find_pair_tab_easy"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tab_medium"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_pill_unselected"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/find_pair_tab_medium"
+            android:textColor="@color/cozy_subtext"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tab_hard"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_pill_unselected"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/find_pair_tab_hard"
+            android:textColor="@color/cozy_subtext"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Level Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_levels"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="12dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/card_bottom_banner"
+        app:layout_constraintTop_toBottomOf="@id/layout_difficulty_tabs"
+        app:spanCount="3"
+        tools:listitem="@layout/item_find_pair_level" />
+
+    <!-- Bottom Mascot Banner -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_bottom_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/cozy_card_background"
+        app:cardCornerRadius="@dimen/card_corner_radius_medium"
+        app:cardElevation="@dimen/card_elevation_soft"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:strokeColor="@color/cozy_card_stroke"
+        app:strokeWidth="@dimen/card_stroke_width">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/iv_banner_cat"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@null"
+                android:src="@drawable/img_puzzle_cute_cat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_banner_speech"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:fontFamily="sans-serif-medium"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/find_pair_banner_speech"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_banner_cat"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

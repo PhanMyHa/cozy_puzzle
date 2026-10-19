@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_large"
+    app:cardBackgroundColor="@color/cozy_card_background"
+    app:cardCornerRadius="@dimen/card_corner_radius_large"
+    app:cardElevation="@dimen/card_elevation_soft"
+    app:strokeColor="@color/cozy_card_stroke"
+    app:strokeWidth="@dimen/card_stroke_width">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/spacing_large"
+        android:paddingTop="@dimen/spacing_xlarge"
+        android:paddingBottom="@dimen/spacing_large">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/profile_edit_name_title"
+            android:textColor="@color/cozy_navy_text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/profile_edit_name_desc"
+            android:textColor="@color/cozy_subtext"
+            android:textSize="13sp" />
+
+        <!-- Input container -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nickname"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/cozy_pastel_blue"
+            app:counterEnabled="true"
+            app:counterMaxLength="24"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/profile_name_hint"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="24"
+                android:maxLines="1"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nickname_cancel"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@android:string/cancel"
+                android:textColor="@color/cozy_subtext" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nickname_save"
+                style="@style/Widget.CozyPuzzle.Button.Pill.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_save" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

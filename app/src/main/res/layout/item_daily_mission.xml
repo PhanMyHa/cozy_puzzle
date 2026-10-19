@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.CozyPuzzle.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_medium"
+    android:layout_marginVertical="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/spacing_medium"
+        android:paddingVertical="@dimen/spacing_medium_small">
+
+        <!-- Icon Container -->
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_day_item_normal">
+
+            <ImageView
+                android:id="@+id/iv_mission_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                tools:src="@drawable/ic_mode_cat" />
+
+        </FrameLayout>
+
+        <!-- Center Text & Progress -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_mission_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="First Step" />
+
+            <TextView
+                android:id="@+id/tv_mission_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/cozy_subtext"
+                android:textSize="12sp"
+                tools:text="Complete 1 puzzle level" />
+
+            <!-- Progress row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/pb_mission_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progressDrawable="@drawable/progress_level_capsule"
+                    tools:progress="60" />
+
+                <TextView
+                    android:id="@+id/tv_mission_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="1/3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Right Side: Reward & Action -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Reward pill -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_currency_pill"
+                android:backgroundTint="@color/cozy_pastel_blue_container"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_star_yellow" />
+
+                <TextView
+                    android:id="@+id/tv_mission_reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="+20" />
+
+            </LinearLayout>
+
+            <!-- Claim / Status Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mission_action"
+                style="@style/Widget.CozyPuzzle.Button.Pill.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginTop="6dp"
+                android:minHeight="36dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="0dp"
+                android:textSize="12sp"
+                tools:text="Claim" />
+
+            <!-- Claimed status indicator -->
+            <TextView
+                android:id="@+id/tv_mission_claimed"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/daily_tasks_btn_claimed"
+                android:textColor="@color/cozy_rarity_common"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

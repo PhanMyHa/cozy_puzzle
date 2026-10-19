@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners
+        android:topLeftRadius="@dimen/home_featured_sheet_radius_top"
+        android:topRightRadius="@dimen/home_featured_sheet_radius_top"
+        android:bottomLeftRadius="@dimen/spacing_none"
+        android:bottomRightRadius="@dimen/spacing_none" />
+    <solid android:color="@color/white" />
+</shape>

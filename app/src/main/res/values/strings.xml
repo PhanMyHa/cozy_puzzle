@@ -2,9 +2,159 @@
     <string name="app_name">Cozy Puzzle</string>
 
     <string name="tab_home">Home</string>
+    <string name="tab_games">Games</string>
+    <string name="tab_my_cats">My Cats</string>
+    <string name="tab_daily">Daily</string>
     <string name="tab_garden">Garden</string>
     <string name="tab_shop">Shop</string>
     <string name="tab_profile">Profile</string>
+
+    <!-- Home Screen -->
+    <string name="home_level_format">Lv. %1$d</string>
+    <string name="home_default_stars">120</string>
+    <string name="home_speech_full">Ready for\na little fun?</string>
+    <string name="featured_games_title">Featured Games</string>
+    <string name="game_mode_cat_puzzle">Cat Puzzle</string>
+    <string name="game_mode_slide_cat">Slide the Cat</string>
+
+    <!-- Shared Dialog Strings -->
+    <string name="dialog_pause_title">Game Paused</string>
+    <string name="dialog_btn_resume">Resume</string>
+    <string name="dialog_btn_restart">Restart</string>
+    <string name="dialog_btn_quit">Quit to Levels</string>
+    <string name="dialog_locked_title">Level Locked</string>
+    <string name="dialog_locked_message">Complete the previous level to unlock! 🐾</string>
+    <string name="dialog_complete_title">Level Complete!</string>
+    <string name="dialog_complete_speech">Great job!\nYou\'re so awesome! 💖</string>
+    <string name="dialog_btn_next">Next Level</string>
+    <string name="dialog_btn_back_levels">Back to Levels</string>
+    <string name="dialog_game_over_title">Time\'s Up!</string>
+    <string name="dialog_game_over_speech">Don\'t give up!\nLet\'s try again! 🐾</string>
+    <string name="dialog_btn_retry">Try Again</string>
+
+    <!-- Cat Puzzle Strings -->
+    <string name="cat_puzzle_title">Cat Puzzle</string>
+    <string name="cat_puzzle_banner_speech">Complete the puzzle\nand get stars! 🌸</string>
+    <string name="cat_puzzle_tab_basic">Basic</string>
+    <string name="cat_puzzle_tab_intermediate">🔒 Intermediate</string>
+    <string name="cat_puzzle_tab_hard">🔒 Hard</string>
+    <string name="cat_puzzle_level_format">Level %1$d</string>
+    <string name="cat_puzzle_level_locked_hint">Complete the previous level to unlock this level! 🐾</string>
+    <string name="cat_puzzle_btn_hint">Hint</string>
+    <string name="cat_puzzle_btn_shuffle">Shuffle</string>
+    <string name="cat_puzzle_btn_pause">Pause</string>
+    <string name="cat_puzzle_paused_title">Paused</string>
+    <string name="cat_puzzle_btn_resume">Resume</string>
+    <string name="cat_puzzle_btn_restart">Restart</string>
+    <string name="cat_puzzle_btn_exit">Exit to Levels</string>
+    <string name="cat_puzzle_complete_title">Level Complete!</string>
+    <string name="cat_puzzle_complete_speech">Great job!\nYou are so awesome! 🌸</string>
+    <string name="cat_puzzle_btn_next">Next Level</string>
+    <string name="cat_puzzle_btn_back_levels">Back to Levels</string>
+    <string name="cat_puzzle_stat_stars">Stars</string>
+    <string name="cat_puzzle_stat_time">Time</string>
+    <string name="cat_puzzle_stat_hints">Hints</string>
+    <string name="cat_puzzle_timer_format">⏱ %1$s</string>
+    <string name="cat_puzzle_progress_format">⭐ %1$d/3</string>
+
+    <!-- Color the Cat Strings -->
+    <string name="color_cat_title">Color the Cat</string>
+    <string name="color_cat_banner_speech">Tô màu những\nchú mèo thật xinh nhé! 🌸</string>
+    <string name="color_cat_tab_basic">Basic</string>
+    <string name="color_cat_tab_intermediate">🔒 Intermediate</string>
+    <string name="color_cat_tab_hard">🔒 Hard</string>
+    <string name="color_cat_level_format">Level %1$d</string>
+    <string name="color_cat_progress_format">%1$d/%2$d</string>
+    <string name="color_cat_timer_format">⏱ %1$s</string>
+    <string name="color_cat_stat_cats_painted">Cats Painted</string>
+    <string name="color_cat_stat_time">Time</string>
+    <string name="color_cat_stat_hints">Hints</string>
+    <string name="color_cat_complete_title">Level Complete!</string>
+    <string name="color_cat_complete_speech">Great job!\nYou\'re so creative! 💖</string>
+    <string name="color_cat_btn_next">Next Level</string>
+    <string name="color_cat_btn_back_levels">Back to Levels</string>
+    <string name="color_cat_btn_hint">Hint</string>
+    <string name="color_cat_btn_undo">Undo</string>
+    <string name="color_cat_btn_reset">Reset</string>
+    <string name="color_cat_btn_resume">Resume</string>
+    <string name="color_cat_btn_restart">Restart</string>
+    <string name="color_cat_btn_exit">Exit to Levels</string>
+    <string name="color_cat_paused_title">Paused</string>
+    <string name="color_cat_reset_confirm_title">Reset Drawing?</string>
+    <string name="color_cat_reset_confirm_message">Are you sure you want to clear all colors on this cute cat?</string>
+    <string name="color_cat_locked_title">Level Locked</string>
+    <string name="color_cat_locked_message">Complete previous level to unlock this picture! 🐾</string>
+    <string name="color_cat_no_hints">No hints remaining! 🐾</string>
+    <string name="game_mode_color_the_cat">Color the Cat</string>
+
+    <!-- Slide the Cat Strings -->
+    <string name="slide_cat_title">Slide the Cat</string>
+    <string name="slide_cat_banner_speech">Slide the tiles to\ncomplete the cute cat! 🌸</string>
+    <string name="slide_cat_tab_easy">Easy</string>
+    <string name="slide_cat_tab_medium">Medium</string>
+    <string name="slide_cat_tab_hard">Hard</string>
+    <string name="slide_cat_level_format">Level %1$d</string>
+    <string name="slide_cat_moves_format">%1$d moves</string>
+    <string name="slide_cat_timer_moves_format">⏱ Moves: %1$d</string>
+    <string name="slide_cat_stat_cats_completed">Cats Completed</string>
+    <string name="slide_cat_stat_time">Time</string>
+    <string name="slide_cat_stat_hints">Hints</string>
+    <string name="slide_cat_complete_title">Level Complete!</string>
+    <string name="slide_cat_complete_speech">Great job!\nYou\'re so awesome! 💖</string>
+    <string name="slide_cat_btn_next">Next Level</string>
+    <string name="slide_cat_btn_back_levels">Back to Levels</string>
+    <string name="slide_cat_btn_hint">Hint</string>
+    <string name="slide_cat_btn_restart">Restart</string>
+    <string name="slide_cat_btn_pause">Pause</string>
+    <string name="slide_cat_btn_resume">Resume</string>
+    <string name="slide_cat_btn_quit">Quit to Levels</string>
+    <string name="slide_cat_paused_title">Game Paused</string>
+    <string name="slide_cat_restart_confirm_title">Restart Level?</string>
+    <string name="slide_cat_restart_confirm_message">Are you sure you want to shuffle this puzzle again?</string>
+    <string name="slide_cat_locked_title">Level Locked</string>
+    <string name="slide_cat_locked_message">Complete previous level to unlock this cat! 🐾</string>
+    <string name="slide_cat_no_hints">No hints remaining! 🐾</string>
+
+    <!-- Find the Pair Strings -->
+    <string name="find_pair_title">Find the Pair</string>
+    <string name="find_pair_banner_speech">Find all matching cute\ncat pairs to win! 🌸</string>
+    <string name="find_pair_tab_easy">Easy</string>
+    <string name="find_pair_tab_medium">Medium</string>
+    <string name="find_pair_tab_hard">Hard</string>
+    <string name="find_pair_level_format">Level %1$d</string>
+    <string name="find_pair_flips_format">%1$d flips</string>
+    <string name="find_pair_timer_flips_format">⏱ Flips: %1$d</string>
+    <string name="find_pair_stat_pairs">Pairs Found</string>
+    <string name="find_pair_stat_time">Time</string>
+    <string name="find_pair_stat_flips">Flips</string>
+    <string name="find_pair_complete_title">Level Complete!</string>
+    <string name="find_pair_complete_speech">Pawsome memory!\nYou matched them all! 💖</string>
+    <string name="find_pair_btn_next">Next Level</string>
+    <string name="find_pair_btn_back_levels">Back to Levels</string>
+    <string name="find_pair_btn_hint">Hint</string>
+    <string name="find_pair_btn_reset">Reset</string>
+    <string name="find_pair_btn_pause">Pause</string>
+    <string name="find_pair_btn_resume">Resume</string>
+    <string name="find_pair_btn_quit">Quit to Levels</string>
+    <string name="find_pair_btn_retry">Try Again</string>
+    <string name="find_pair_btn_cancel">Cancel</string>
+    <string name="find_pair_paused_title">Game Paused</string>
+    <string name="find_pair_game_over_title">Time\'s Up!</string>
+    <string name="find_pair_game_over_speech">Don\'t give up!\nLet\'s try again! 🐾</string>
+    <string name="find_pair_reset_confirm_title">Reset Game?</string>
+    <string name="find_pair_reset_confirm_message">Are you sure you want to shuffle and start this level over?</string>
+    <string name="find_pair_locked_title">Level Locked</string>
+    <string name="find_pair_locked_message">Complete previous level to unlock this puzzle! 🐾</string>
+    <string name="find_pair_no_hints">No hints remaining! 🐾</string>
+    <string name="game_mode_find_pair">Find the Pair</string>
+
+    <string name="cd_mascot_scene">Cozy cat relaxing in the room</string>
+    <string name="cd_avatar">Player avatar</string>
+    <string name="cd_add_stars">Add stars</string>
+    <string name="cd_level_progress">Level progress</string>
+    <string name="cd_featured_icon">Featured games paw icon</string>
+    <string name="cd_open_game">Open game</string>
+    <string name="cd_speech_heart">Speech bubble heart</string>
 
     <string name="player_default_name">Friend</string>
     <string name="feature_coming_soon">Coming soon in a cozy update 🌱</string>
@@ -17,7 +167,7 @@
     <string name="daily_puzzle_size_format">🧩 %1$d × %1$d</string>
     <string name="daily_puzzle_size_placeholder">🧩 4 × 4</string>
     <string name="btn_play">Play</string>
-    <string name="game_modes_header">Game Modes</string>
+    <string name="game_modes_header">Featured Games</string>
 
     <string name="garden_emoji">🌳</string>
     <string name="garden_title">Your Garden</string>
@@ -32,10 +182,40 @@
     <string name="coins_placeholder">🪙 0 coins</string>
     <string name="shop_empty_hint">The shop is being stocked. Come back soon!</string>
 
+    <string name="shop_category_all">All</string>
+    <string name="shop_category_flowers">🌸 Flowers</string>
+    <string name="shop_category_trees">🌳 Trees</string>
+    <string name="shop_category_buildings">🏡 Buildings</string>
+    <string name="shop_category_furniture">🪑 Furniture</string>
+    <string name="shop_category_decorations">🏮 Decor</string>
+    <string name="shop_category_pets">🐾 Pets</string>
+    <string name="shop_category_themes">✨ Themes</string>
+
+    <string name="rarity_common">Common</string>
+    <string name="rarity_rare">Rare</string>
+    <string name="rarity_epic">Epic</string>
+    <string name="rarity_legendary">Legendary</string>
+
+    <string name="shop_price_format">🪙 %1$d</string>
+    <string name="shop_owned">Owned 💕</string>
+    <string name="shop_purchase_success">Added to your cozy collection! 🎉</string>
+    <string name="shop_insufficient_coins">Not enough coins — play puzzles to earn more! 🥺</string>
+    <string name="shop_already_owned">You already own this one 🌼</string>
+
     <string name="profile_level_format">Level %1$d</string>
     <string name="profile_level_placeholder">Level 1</string>
     <string name="btn_edit_name">Edit Name</string>
     <string name="btn_settings">Settings</string>
+    <string name="profile_camera_emoji">📷</string>
+    <string name="profile_change_photo_hint">Tap the avatar to change your photo</string>
+    <string name="profile_avatar_cd">Profile photo</string>
+    <string name="profile_edit_name_title">What should we call you?</string>
+    <string name="profile_name_hint">Your cozy name</string>
+    <string name="btn_save">Save</string>
+    <string name="profile_stat_level_emoji">🌟</string>
+    <string name="profile_stat_coins_emoji">🪙</string>
+    <string name="profile_avatar_failed">Could not load that photo, try another 🥺</string>
+    <string name="profile_name_invalid">Please pick a shorter, sweeter name 🌸</string>
 
     <string name="cd_puzzle_board">Puzzle board</string>
     <string name="cd_back">Back</string>
@@ -79,18 +259,187 @@
     <string name="btn_choose_another">Choose another puzzle</string>
     <string name="btn_home">Home</string>
 
-    <string name="game_mode_basic">Basic</string>
-    <string name="game_mode_find_my_cat">Find My Cat</string>
+    <string name="daily_draw_title">Daily Draw</string>
+    <string name="daily_attempts_format">🌸 %1$d attempts</string>
+    <string name="daily_status_start_hint">Start at the sprout 🌱 and draw to the blossom 🌼</string>
+    <string name="daily_status_draw_hint">Keep going — reach the blossom 🌼</string>
+    <string name="daily_status_hit_obstacle">Oh no, a rock! 🪨 Try again 💕</string>
+    <string name="daily_status_done">What a lovely path! ✨</string>
+    <string name="daily_result_title">A lovely little path!</string>
+    <string name="daily_result_attempts_format">🌸 Attempts: %1$d</string>
+    <string name="daily_result_color_format">🎨 Color: %1$s</string>
+    <string name="btn_clear_stroke">Clear stroke</string>
+    <string name="cd_daily_board">Daily draw board</string>
+    <string name="cd_daily_palette">Brush colors</string>
 
-    <string name="cat_select_title">Find My Cat</string>
-    <string name="cat_select_subtitle">Rotate and swap tiles to guide the cat home 🐱</string>
-    <string name="cat_level_emoji">🐱</string>
+    <string name="garden_edit_hint">Edit mode: tap an item to select, drag to move.</string>
+    <string name="btn_remove_item">Remove</string>
+    <string name="cd_garden_canvas">Garden lawn</string>
 
-    <string name="cat_path_ready">Path ready! Press Walk 🐾</string>
-    <string name="cat_path_missing">No path yet — keep arranging the tiles</string>
-    <string name="btn_walk">🐾 Walk</string>
-    <string name="cd_cat_board">Cat path board</string>
-    <string name="cat_result_title">The cat is home!</string>
-    <string name="game_mode_cozy_garden">Cozy Garden</string>
-    <string name="game_mode_frog_pond">Frog Pond</string>
+    <!-- My Cats Strings -->
+    <string name="my_cats_title">My Cats</string>
+    <string name="my_cats_subtitle">Collect cute cats and\ncomplete your collection! 🌸</string>
+    <string name="my_cats_progress_format">🐾 %1$d/%2$d Cats</string>
+    <string name="my_cats_filter_all">All</string>
+    <string name="my_cats_filter_owned">Owned</string>
+    <string name="my_cats_filter_locked">Locked</string>
+    <string name="my_cats_locked_name">\???</string>
+    <string name="my_cats_empty_title">No cats found</string>
+    <string name="my_cats_empty_desc">Play more puzzle levels to unlock cute cats! 🐾</string>
+
+    <!-- Cat Detail Strings -->
+    <string name="cat_detail_title">My Cats</string>
+    <string name="cat_detail_rarity_label">Rarity</string>
+    <string name="cat_detail_category_label">Category</string>
+    <string name="cat_detail_found_in_label">Found in</string>
+    <string name="cat_detail_interact_title">Interact with %1$s</string>
+    <string name="cat_detail_btn_interact">Tap to interact</string>
+    <string name="cat_interaction_pet">Pet</string>
+    <string name="cat_interaction_play">Play</string>
+    <string name="cat_interaction_smile">Smile</string>
+    <string name="cat_interaction_sleep">Sleep</string>
+    <string name="cat_interaction_speech_meow">Meow~ 💕</string>
+    <string name="cat_interaction_speech_purr">Purr... 🥰</string>
+    <string name="cat_interaction_speech_play">Yay! Catch the ball! 🧶</string>
+    <string name="cat_interaction_speech_sleep">Zzz... Sweet dreams! 💤</string>
+    <string name="cd_favorite_button">Favorite</string>
+
+    <!-- Cat Unlock Celebration Strings -->
+    <string name="cat_unlock_dialog_title">New Cat Unlocked!</string>
+    <string name="cat_unlock_dialog_subtitle">You unlocked</string>
+    <string name="cat_unlock_how_to_unlock">How to unlock</string>
+    <string name="cat_unlock_btn_got_it">Got it!</string>
+    <string name="cat_unlock_locked_dialog_title">Cat Locked</string>
+    <string name="cat_unlock_progress_format">%1$d/%2$d</string>
+
+    <!-- Themes -->
+    <string name="cat_theme_sleepy">Sleepy Cats</string>
+    <string name="cat_theme_chef">Chef Cats</string>
+    <string name="cat_theme_space">Space Cats</string>
+    <string name="cat_theme_garden">Garden Cats</string>
+
+    <!-- Rarities -->
+    <string name="cat_rarity_common">Common</string>
+    <string name="cat_rarity_rare">Rare</string>
+    <string name="cat_rarity_epic">Epic</string>
+    <string name="cat_rarity_legendary">Legendary</string>
+
+    <!-- Daily Tasks Strings -->
+    <string name="daily_tasks_title">Daily Tasks</string>
+    <string name="daily_tasks_subtitle">A little puzzle, a little happiness! 🌸</string>
+    <string name="daily_tasks_streak_title">Daily Streak</string>
+    <string name="daily_tasks_streak_days">%1$d Days Streak! 🔥</string>
+    <string name="daily_tasks_streak_today_done">Completed today! Keep it up! 🐾</string>
+    <string name="daily_tasks_streak_today_todo">Play a puzzle today to keep your streak! 🌸</string>
+    <string name="daily_tasks_bonus_title">Daily Bonus</string>
+    <string name="daily_tasks_bonus_desc">Complete all daily missions to claim your bonus!</string>
+    <string name="daily_tasks_bonus_claimed">Claimed ✨</string>
+    <string name="daily_tasks_bonus_claim">Claim Bonus 🎁</string>
+    <string name="daily_tasks_bonus_in_progress">%1$d/%2$d Completed</string>
+    <string name="daily_tasks_reward_format">+%1$d</string>
+    <string name="daily_tasks_mission_progress_format">%1$d/%2$d</string>
+    <string name="daily_tasks_btn_claim">Claim</string>
+    <string name="daily_tasks_btn_claimed">Claimed</string>
+    <string name="daily_tasks_btn_go">Go</string>
+
+    <!-- Daily Mission Items -->
+    <string name="mission_first_step_title">First Step</string>
+    <string name="mission_first_step_desc">Complete 1 puzzle level</string>
+    <string name="mission_puzzle_master_title">Puzzle Master</string>
+    <string name="mission_puzzle_master_desc">Complete 3 puzzle levels</string>
+    <string name="mission_sharp_memory_title">Sharp Memory</string>
+    <string name="mission_sharp_memory_desc">Match 3 pairs in Find the Pair</string>
+    <string name="mission_star_collector_title">Star Collector</string>
+    <string name="mission_star_collector_desc">Earn 3 stars across puzzles</string>
+    <string name="mission_cozy_explorer_title">Cozy Explorer</string>
+    <string name="mission_cozy_explorer_desc">Play 2 different game modes</string>
+
+    <!-- Daily Reward Celebration Dialog -->
+    <string name="daily_reward_dialog_title">Reward Claimed!</string>
+    <string name="daily_reward_dialog_coins_format">+%1$d Coins</string>
+    <string name="daily_reward_dialog_subtitle">You earned a cozy reward! 🐾</string>
+    <string name="daily_reward_dialog_btn_collect">Collect!</string>
+
+    <!-- Profile & Stats Strings -->
+    <string name="profile_header_title">My Profile</string>
+    <string name="profile_edit_name_desc">Choose a cute nickname for your profile (up to 24 characters).</string>
+    <string name="profile_stats_title">Player Stats</string>
+    <string name="profile_stat_total_stars">Total Stars</string>
+    <string name="profile_stat_levels_completed">Levels Done</string>
+    <string name="profile_stat_cats_collected">Cats Collected</string>
+    <string name="profile_stat_daily_streak">Daily Streak</string>
+    <string name="profile_stars_count_format">%1$d ⭐</string>
+    <string name="profile_levels_count_format">%1$d 🧩</string>
+    <string name="profile_cats_count_format">%1$d/%2$d 🐾</string>
+    <string name="profile_streak_count_format">%1$d Days 🔥</string>
+
+    <!-- Achievements Strings -->
+    <string name="profile_achievements_title">Achievements</string>
+    <string name="profile_achievements_count_format">%1$d/%2$d Unlocked</string>
+    <string name="profile_achievement_unlocked">Unlocked ✨</string>
+    <string name="profile_achievement_locked">Locked 🔒</string>
+    <string name="ach_novice_title">Novice Solver</string>
+    <string name="ach_novice_desc">Complete 5 puzzle levels</string>
+    <string name="ach_master_title">Puzzle Master</string>
+    <string name="ach_master_desc">Complete 15 puzzle levels</string>
+    <string name="ach_star_gazer_title">Star Collector</string>
+    <string name="ach_star_gazer_desc">Earn 20 stars</string>
+    <string name="ach_super_star_title">Super Star</string>
+    <string name="ach_super_star_desc">Earn 50 stars</string>
+    <string name="ach_cat_friend_title">Cat Friend</string>
+    <string name="ach_cat_friend_desc">Collect 3 cute cats</string>
+    <string name="ach_cat_collector_title">Cat Enthusiast</string>
+    <string name="ach_cat_collector_desc">Collect 6 cute cats</string>
+    <string name="ach_streak_title">On Fire</string>
+    <string name="ach_streak_desc">Reach a 3-day streak</string>
+
+    <!-- Settings Strings -->
+    <string name="profile_settings_title">Settings</string>
+    <string name="profile_setting_sound">Sound Effects</string>
+    <string name="profile_setting_sound_desc">Play audio feedback for game actions</string>
+    <string name="profile_setting_music">Background Music</string>
+    <string name="profile_setting_music_desc">Relaxing cozy background melodies</string>
+    <string name="profile_setting_vibration">Vibration</string>
+    <string name="profile_setting_vibration_desc">Haptic feedback on taps and matches</string>
+    <string name="profile_setting_privacy">Privacy Policy</string>
+    <string name="profile_setting_terms">Terms of Service</string>
+    <string name="profile_setting_version">Version</string>
+    <string name="profile_privacy_message">Cozy Puzzle respects your privacy. All your puzzle progress, collection, and settings are stored locally on your device without collecting personal data.</string>
+    <!-- Star Shop & Star Currency Strings -->
+    <string name="star_shop_title">Star Shop ⭐</string>
+    <string name="star_shop_subtitle">Earn stars to unlock cute cats and cozy items!</string>
+    <string name="star_shop_balance_format">%1$d Stars ⭐</string>
+    <string name="star_shop_mascot_speech">Complete puzzles, finish daily tasks, and check in every day to collect more stars! 🌸</string>
+    <string name="star_shop_section_ways">Ways to Earn Stars</string>
+    <string name="star_shop_status_not_completed">In Progress</string>
+    <string name="star_shop_status_claimable">Ready to Claim!</string>
+    <string name="star_shop_status_claimed">Claimed ✓</string>
+    <string name="star_shop_btn_claim">Claim +%1$d ⭐</string>
+    <string name="star_shop_btn_play">Play Puzzles</string>
+    <string name="star_shop_btn_go_daily">Go to Daily</string>
+    <string name="star_shop_btn_claimed">Claimed ✓</string>
+
+    <string name="star_shop_daily_login_title">Daily Login</string>
+    <string name="star_shop_daily_login_desc">Check in every day to receive your free welcome stars!</string>
+    <string name="star_shop_daily_login_reward">+15 ⭐</string>
+    <string name="star_shop_daily_login_claimed_today">Claimed for today! Return tomorrow ✨</string>
+    <string name="star_shop_daily_login_ready">Daily gift is ready to collect! 🎁</string>
+
+    <string name="star_shop_levels_title">Complete Levels</string>
+    <string name="star_shop_levels_desc">Play Cat Puzzle, Color Cat, Slide Cat &amp; Find Pair (1–3 ⭐, record delta only).</string>
+    <string name="star_shop_levels_reward">1–3 ⭐ / level</string>
+    <string name="star_shop_levels_progress_format">%1$d/%2$d Levels Done</string>
+
+    <string name="star_shop_daily_missions_title">Daily Missions</string>
+    <string name="star_shop_daily_missions_desc">Complete daily missions to earn bonus stars and coins.</string>
+    <string name="star_shop_daily_missions_reward">20–100 ⭐</string>
+    <string name="star_shop_daily_missions_progress_format">%1$d/%2$d Completed</string>
+
+    <string name="star_shop_achievements_title">Achievements</string>
+    <string name="star_shop_achievements_desc">Unlock special milestones for generous one-time star rewards!</string>
+    <string name="star_shop_achievements_reward">15–50 ⭐ each</string>
+    <string name="star_shop_achievements_header_format">Achievements (%1$d/%2$d Unlocked)</string>
+    <string name="star_shop_reward_celebration">You received +%1$d Stars! ⭐</string>
+    <string name="dialog_complete_reward_added">Purr-fect! You earned +%1$d ⭐!</string>
+    <string name="dialog_complete_reward_none">Cleared! Record maintained (0 new stars). 🌸</string>
 </resources>

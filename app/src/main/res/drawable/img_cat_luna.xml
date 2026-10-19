@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Soft Pastel Pink Halo -->
+    <path
+        android:fillColor="#E6FFF0F5"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0"/>
+
+    <!-- Left Ear -->
+    <path
+        android:fillColor="#FFD1C4E9"
+        android:pathData="M52,70 L36,36 Q60,38 74,58 Z"/>
+    <path
+        android:fillColor="#FFF8BBD0"
+        android:pathData="M52,62 L43,44 Q56,45 66,54 Z"/>
+
+    <!-- Right Ear -->
+    <path
+        android:fillColor="#FFD1C4E9"
+        android:pathData="M126,58 Q140,38 164,36 L148,70 Z"/>
+    <path
+        android:fillColor="#FFF8BBD0"
+        android:pathData="M134,54 Q144,45 157,44 L148,62 Z"/>
+
+    <!-- Flower Garland Headband -->
+    <path
+        android:fillColor="#FF81C784"
+        android:pathData="M58,58 Q100,50 142,58 Q100,54 58,58 Z"/>
+    <!-- Rose 1 -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M70,54 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z"/>
+    <!-- Rose 2 Center -->
+    <path
+        android:fillColor="#FFFF4081"
+        android:pathData="M93,50 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0 Z"/>
+    <!-- Rose 3 -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M118,54 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z"/>
+
+    <!-- Cat Head & Body (White/Cream) -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M50,85 C40,110 42,145 70,160 C90,170 110,170 130,160 C158,145 160,110 150,85 C140,68 60,68 50,85 Z"/>
+
+    <!-- Lilac Head Patch -->
+    <path
+        android:fillColor="#FFD1C4E9"
+        android:pathData="M65,72 C55,85 58,100 70,98 C82,96 80,75 65,72 Z M135,72 C145,85 142,100 130,98 C118,96 120,75 135,72 Z"/>
+
+    <!-- Pink Cheeks Blush -->
+    <path
+        android:fillColor="#80FF4081"
+        android:pathData="M66,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+    <path
+        android:fillColor="#80FF4081"
+        android:pathData="M118,122 a8,5 0 1,0 16,0 a8,5 0 1,0 -16,0 Z"/>
+
+    <!-- Sweet Happy Curved Closed Eyes -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF4A148C"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M76,114 Q84,106 92,114 M108,114 Q116,106 124,114"/>
+
+    <!-- Nose & Happy Mouth -->
+    <path
+        android:fillColor="#FFF48FB1"
+        android:pathData="M97,122 L103,122 L100,125 Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF4A148C"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M95,126 Q100,130 100,126 Q100,130 105,126"/>
+
+    <!-- Pink Ribbon Collar & Bell -->
+    <path
+        android:fillColor="#FFFF80AB"
+        android:pathData="M78,150 C78,146 122,146 122,150 C122,154 78,154 78,150 Z"/>
+    <path
+        android:fillColor="#FFFFD54F"
+        android:pathData="M96,155 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0 Z"/>
+
+    <!-- Paws -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M78,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M108,162 a7,6 0 1,0 14,0 a7,6 0 1,0 -14,0 Z"/>
+</vector>

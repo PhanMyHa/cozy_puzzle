@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cozy_bg_screen">
+
+    <!-- Top Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_game_back"
+            android:layout_width="@dimen/home_currency_pill_height"
+            android:layout_height="@dimen/home_currency_pill_height"
+            android:background="@drawable/bg_circle_button"
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title & Difficulty -->
+        <LinearLayout
+            android:id="@+id/layout_title_difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/layout_progress_pill"
+            app:layout_constraintStart_toEndOf="@id/btn_game_back"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_game_level_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Level 1" />
+
+            <TextView
+                android:id="@+id/tv_game_difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_timer_pill"
+                android:backgroundTint="@color/cozy_pastel_blue"
+                android:fontFamily="sans-serif"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="1dp"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:text="Easy" />
+        </LinearLayout>
+
+        <!-- Progress / Pairs Pill -->
+        <LinearLayout
+            android:id="@+id/layout_progress_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_timer_pill"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_game_pause"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_paw"
+                app:tint="@color/cozy_navy_text" />
+
+            <TextView
+                android:id="@+id/tv_game_pairs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="2/6" />
+        </LinearLayout>
+
+        <!-- Top Pause Button -->
+        <ImageButton
+            android:id="@+id/btn_game_pause"
+            android:layout_width="@dimen/home_currency_pill_height"
+            android:layout_height="@dimen/home_currency_pill_height"
+            android:background="@drawable/bg_circle_button"
+            android:contentDescription="@string/cd_pause"
+            android:src="@drawable/ic_pause_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Info Row: Timer on Left, Flips on Right -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_info_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_top_bar">
+
+        <!-- Timer Pill -->
+        <LinearLayout
+            android:id="@+id/layout_timer_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_timer_pill"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_timer" />
+
+            <TextView
+                android:id="@+id/tv_game_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="02:00" />
+        </LinearLayout>
+
+        <!-- Flips Pill -->
+        <LinearLayout
+            android:id="@+id/layout_flips_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_timer_pill"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_reset"
+                app:tint="@color/cozy_navy_text" />
+
+            <TextView
+                android:id="@+id/tv_game_flips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="Flips: 0" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Cards Grid Container Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_board_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/find_pair_board_margin"
+        android:layout_marginVertical="12dp"
+        app:cardBackgroundColor="@color/cozy_card_background"
+        app:cardCornerRadius="@dimen/card_corner_radius_large"
+        app:cardElevation="@dimen/card_elevation_soft"
+        app:layout_constraintBottom_toTopOf="@id/layout_game_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_info_row"
+        app:strokeColor="@color/cozy_card_stroke"
+        app:strokeWidth="@dimen/card_stroke_width">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_cards"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            android:padding="8dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom Buttons: Hint, Reset, Pause -->
+    <LinearLayout
+        android:id="@+id/layout_game_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Hint Button with Badge -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_action_hint"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_pill"
+                android:backgroundTint="@color/cozy_pastel_blue"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/find_pair_btn_hint"
+                android:textAllCaps="false"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/button_corner_radius_pill"
+                app:icon="@drawable/ic_lightbulb"
+                app:iconGravity="textStart"
+                app:iconTint="@color/cozy_navy_text" />
+
+            <TextView
+                android:id="@+id/tv_hint_badge"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top|end"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_hint_badge"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="3" />
+        </FrameLayout>
+
+        <!-- Reset Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_action_reset"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_pill"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/cozy_pastel_blue_container"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/find_pair_btn_reset"
+            android:textAllCaps="false"
+            android:textColor="@color/cozy_navy_text"
+            android:textSize="14sp"
+            app:cornerRadius="@dimen/button_corner_radius_pill"
+            app:icon="@drawable/ic_reset"
+            app:iconGravity="textStart"
+            app:iconTint="@color/cozy_navy_text"
+            app:strokeColor="@color/cozy_card_stroke"
+            app:strokeWidth="1dp" />
+
+        <!-- Pause Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_action_pause"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_pill"
+            android:layout_weight="1"
+            android:backgroundTint="@color/cozy_pastel_pink"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/find_pair_btn_pause"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/button_corner_radius_pill"
+            app:icon="@drawable/ic_pause_small"
+            app:iconGravity="textStart"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

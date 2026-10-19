@@ -32,4 +32,9 @@ object FirebaseModule {
     fun provideConfigRepository(
         remoteConfigDataSource: RemoteConfigDataSource
     ): ConfigRepository = ConfigRepositoryImpl(remoteConfigDataSource)
+
+    @Provides
+    @Singleton
+    fun provideBasicPuzzleConfigParser(): com.example.cozypuzzle.data.remote.firebase.BasicPuzzleConfigParser =
+        com.example.cozypuzzle.data.remote.firebase.BasicPuzzleConfigParser()
 }

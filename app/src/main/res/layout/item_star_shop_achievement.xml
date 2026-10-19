@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/cozy_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Icon Container -->
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_circle_button">
+
+            <ImageView
+                android:id="@+id/iv_ach_icon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_star_yellow" />
+
+        </FrameLayout>
+
+        <!-- Details Column -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ach_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Novice Solver" />
+
+            <TextView
+                android:id="@+id/tv_ach_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/cozy_subtext"
+                android:textSize="12sp"
+                tools:text="Complete 5 puzzle levels" />
+
+            <!-- Progress Bar + Text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/pb_ach_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="60"
+                    android:progressDrawable="@drawable/progress_level_capsule" />
+
+                <TextView
+                    android:id="@+id/tv_ach_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/cozy_subtext"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    tools:text="3/5" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Right Side: Reward & Action -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Reward Tag -->
+            <TextView
+                android:id="@+id/tv_ach_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="+15 ⭐" />
+
+            <!-- Action Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ach_action"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginTop="4dp"
+                android:minWidth="76dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="0dp"
+                android:text="@string/star_shop_btn_claimed"
+                android:textAllCaps="false"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:cornerRadius="17dp"
+                tools:text="Claim" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

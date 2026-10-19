@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.CozyPuzzle.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_medium"
+    android:layout_marginVertical="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/spacing_medium"
+        android:paddingVertical="@dimen/spacing_medium_small">
+
+        <!-- Icon Container -->
+        <FrameLayout
+            android:id="@+id/fl_ach_icon_container"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_day_item_normal">
+
+            <ImageView
+                android:id="@+id/iv_ach_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                tools:src="@drawable/ic_star_yellow" />
+
+        </FrameLayout>
+
+        <!-- Center Text & Progress -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ach_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Novice Solver" />
+
+            <TextView
+                android:id="@+id/tv_ach_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/cozy_subtext"
+                android:textSize="12sp"
+                tools:text="Complete 5 puzzle levels" />
+
+            <!-- Progress row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/pb_ach_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progressDrawable="@drawable/progress_level_capsule"
+                    tools:progress="60" />
+
+                <TextView
+                    android:id="@+id/tv_ach_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="3/5" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Right Side: Unlocked / Locked Badge -->
+        <TextView
+            android:id="@+id/tv_ach_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_currency_pill"
+            android:backgroundTint="@color/cozy_rarity_common_bg"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:textColor="@color/cozy_rarity_common"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            tools:text="Unlocked ✨" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

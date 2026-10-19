@@ -4,81 +4,257 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@drawable/bg_hero_sky"
+    android:fillViewport="true"
+    android:overScrollMode="never">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/home_greeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/greeting_evening"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/daily_puzzle_card"
+        <!-- Top Hero Section: Header + Cat Mascot + Speech Bubble -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_hero_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="3dp">
+            android:minHeight="@dimen/home_hero_min_height"
+            android:paddingStart="@dimen/home_header_padding_horizontal"
+            android:paddingTop="@dimen/home_header_padding_top"
+            android:paddingEnd="@dimen/home_header_padding_horizontal"
+            android:paddingBottom="@dimen/spacing_medium">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Left Header: Avatar Circle -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_player_avatar"
+                android:layout_width="@dimen/home_avatar_size"
+                android:layout_height="@dimen/home_avatar_size"
+                android:contentDescription="@string/cd_avatar"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/img_cat_milo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.CozyPuzzle.CircleImage"
+                app:strokeColor="@color/cozy_pastel_blue"
+                app:strokeWidth="@dimen/home_avatar_border_width" />
+
+            <!-- Left Header: Level Label -->
+            <TextView
+                android:id="@+id/tv_player_level"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="24dp">
+                android:layout_marginStart="@dimen/home_avatar_margin_end"
+                android:textColor="@color/cozy_navy_text"
+                android:textSize="@dimen/text_size_level"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_player_avatar"
+                app:layout_constraintTop_toTopOf="@id/iv_player_avatar"
+                tools:text="Lv. 5" />
+
+            <!-- Left Header: Capsule Progress Bar -->
+            <ProgressBar
+                android:id="@+id/pb_level_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="@dimen/home_level_progress_width"
+                android:layout_height="@dimen/home_level_progress_height"
+                android:layout_marginStart="@dimen/home_avatar_margin_end"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:contentDescription="@string/cd_level_progress"
+                android:max="100"
+                android:progress="60"
+                android:progressDrawable="@drawable/progress_level_capsule"
+                app:layout_constraintStart_toEndOf="@id/iv_player_avatar"
+                app:layout_constraintTop_toBottomOf="@id/tv_player_level" />
+
+            <!-- Right Header: Star Currency Pill Badge -->
+            <LinearLayout
+                android:id="@+id/layout_currency_pill"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/home_currency_pill_height"
+                android:background="@drawable/bg_currency_pill"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/home_currency_pill_padding_start"
+                android:paddingEnd="@dimen/home_currency_pill_padding_end"
+                app:layout_constraintBottom_toBottomOf="@id/iv_player_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_player_avatar">
+
+                <ImageView
+                    android:id="@+id/iv_star_icon"
+                    android:layout_width="@dimen/home_currency_icon_size"
+                    android:layout_height="@dimen/home_currency_icon_size"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_star_yellow" />
 
                 <TextView
+                    android:id="@+id/tv_star_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/daily_puzzle_title"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:layout_marginStart="@dimen/spacing_tiny"
+                    android:layout_marginEnd="@dimen/spacing_small"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="@dimen/text_size_currency"
+                    android:textStyle="bold"
+                    tools:text="120" />
 
-                <TextView
-                    android:id="@+id/daily_puzzle_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/daily_puzzle_size_placeholder"
-                    android:textSize="14sp" />
+                <FrameLayout
+                    android:id="@+id/btn_add_stars"
+                    android:layout_width="@dimen/home_currency_plus_size"
+                    android:layout_height="@dimen/home_currency_plus_size"
+                    android:background="@drawable/bg_plus_circle"
+                    android:contentDescription="@string/cd_add_stars">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_play_daily"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/btn_play" />
+                    <ImageView
+                        android:layout_width="@dimen/home_currency_plus_icon_size"
+                        android:layout_height="@dimen/home_currency_plus_icon_size"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_plus_white" />
+
+                </FrameLayout>
 
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+            <!-- Mascot Illustration Area -->
+            <ImageView
+                android:id="@+id/iv_cat_mascot"
+                android:layout_width="@dimen/home_hero_mascot_width"
+                android:layout_height="@dimen/home_hero_mascot_height"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:contentDescription="@string/cd_mascot_scene"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_player_avatar"
+                tools:src="@drawable/img_puzzle_cute_cat" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/game_modes_header"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <!-- Speech Bubble beside Mascot -->
+            <LinearLayout
+                android:id="@+id/layout_speech_bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/home_speech_margin_start"
+                android:background="@drawable/bg_speech_bubble"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/home_speech_bubble_padding_h"
+                android:paddingTop="@dimen/home_speech_bubble_padding_v"
+                android:paddingEnd="@dimen/home_speech_bubble_padding_h"
+                android:paddingBottom="@dimen/home_speech_bubble_padding_v"
+                app:layout_constraintBottom_toBottomOf="@id/iv_cat_mascot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_player_avatar"
+                app:layout_constraintVertical_bias="0.35">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/game_modes_recycler"
+                <TextView
+                    android:id="@+id/tv_speech_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/spacing_micro"
+                    android:text="@string/home_speech_full"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="@dimen/text_size_speech"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_speech_heart"
+                    android:layout_width="@dimen/home_speech_heart_size"
+                    android:layout_height="@dimen/home_speech_heart_size"
+                    android:layout_marginTop="@dimen/spacing_tiny"
+                    android:contentDescription="@string/cd_speech_heart"
+                    android:src="@drawable/ic_heart_pink" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Bottom Sheet: Featured Games Section -->
+        <LinearLayout
+            android:id="@+id/layout_featured_sheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:overScrollMode="never"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:itemCount="4"
-            tools:listitem="@layout/item_game_mode" />
+            android:background="@drawable/bg_featured_sheet"
+            android:elevation="@dimen/card_elevation_soft"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/home_featured_sheet_padding_h"
+            android:paddingTop="@dimen/home_featured_sheet_padding_top"
+            android:paddingEnd="@dimen/home_featured_sheet_padding_h"
+            android:paddingBottom="@dimen/home_featured_sheet_padding_bottom">
+
+            <!-- Featured Header with Blue Paw Icon -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/home_featured_header_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_featured_paw"
+                    android:layout_width="@dimen/home_featured_header_paw_size"
+                    android:layout_height="@dimen/home_featured_header_paw_size"
+                    android:contentDescription="@string/cd_featured_icon"
+                    android:src="@drawable/ic_paw" />
+
+                <TextView
+                    android:id="@+id/tv_featured_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:text="@string/featured_games_title"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="@dimen/text_size_featured_title"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- 2x2 Game Cards Grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/game_modes_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_game_mode" />
+
+            <!-- Indicator Dots -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/home_indicator_margin_top"
+                android:layout_marginBottom="@dimen/home_indicator_margin_bottom"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/home_dot_active_width"
+                    android:layout_height="@dimen/home_dot_height"
+                    android:background="@drawable/bg_dot_active" />
+
+                <View
+                    android:layout_width="@dimen/home_dot_inactive_width"
+                    android:layout_height="@dimen/home_dot_height"
+                    android:layout_marginStart="@dimen/home_dot_margin_horizontal"
+                    android:background="@drawable/bg_dot_inactive" />
+
+                <View
+                    android:layout_width="@dimen/home_dot_inactive_width"
+                    android:layout_height="@dimen/home_dot_height"
+                    android:layout_marginStart="@dimen/home_dot_margin_horizontal"
+                    android:background="@drawable/bg_dot_inactive" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

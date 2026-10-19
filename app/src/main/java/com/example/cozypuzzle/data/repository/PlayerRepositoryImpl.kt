@@ -28,6 +28,12 @@ class PlayerRepositoryImpl @Inject constructor(
         playerDao.upsert(current.copy(name = name))
     }
 
+    override suspend fun updateAvatarUri(avatarUri: String?) {
+        val current = playerDao.getById(PlayerEntity.DEFAULT_PLAYER_ID)
+            ?: defaultPlayerEntity()
+        playerDao.upsert(current.copy(avatarUri = avatarUri))
+    }
+
     override suspend fun addCoins(amount: Int) {
         val current = playerDao.getById(PlayerEntity.DEFAULT_PLAYER_ID)
             ?: defaultPlayerEntity()
@@ -38,6 +44,7 @@ class PlayerRepositoryImpl @Inject constructor(
         id = id,
         name = name,
         avatarId = avatarId,
+        avatarUri = avatarUri,
         level = level,
         coins = coins,
         gems = gems

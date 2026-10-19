@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cozy_bg_screen">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:paddingBottom="@dimen/spacing_xxlarge">
+
+            <!-- Top Header: Back + Title + Favorite Button -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_back"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/cd_back"
+                    app:backgroundTint="@color/white"
+                    app:icon="@drawable/ic_back_arrow"
+                    app:iconGravity="textStart"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/cozy_navy_text"
+                    app:shapeAppearance="@style/ShapeAppearance.CozyPuzzle.CircleImage"
+                    app:strokeColor="@color/cozy_card_stroke"
+                    app:strokeWidth="1.5dp" />
+
+                <TextView
+                    android:id="@+id/tv_header_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/cat_detail_title"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Favorite Heart Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_favorite"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/cd_favorite_button"
+                    app:backgroundTint="@color/white"
+                    app:icon="@drawable/ic_heart_outline"
+                    app:iconGravity="textStart"
+                    app:iconSize="22dp"
+                    app:iconTint="@color/cozy_pastel_pink_dark"
+                    app:shapeAppearance="@style/ShapeAppearance.CozyPuzzle.CircleImage"
+                    app:strokeColor="@color/cozy_card_stroke"
+                    app:strokeWidth="1.5dp" />
+
+            </RelativeLayout>
+
+            <!-- Hero Mascot Area (Sitting on Cushion) -->
+            <FrameLayout
+                android:id="@+id/layout_hero_container"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="@dimen/spacing_medium">
+
+                <!-- Cushion Base -->
+                <ImageView
+                    android:layout_width="@dimen/cat_detail_cushion_width"
+                    android:layout_height="@dimen/cat_detail_cushion_height"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/bg_cushion" />
+
+                <!-- Cat Mascot Illustration -->
+                <ImageView
+                    android:id="@+id/iv_cat_hero"
+                    android:layout_width="@dimen/cat_detail_hero_size"
+                    android:layout_height="@dimen/cat_detail_hero_size"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="24dp"
+                    android:contentDescription="@null"
+                    tools:src="@drawable/img_cat_milo" />
+
+                <!-- Speech Bubble for Reaction -->
+                <LinearLayout
+                    android:id="@+id/layout_speech_bubble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_speech_bubble"
+                    android:elevation="4dp"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_speech_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/cat_interaction_speech_meow"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Cat Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="@color/cozy_card_background"
+                app:cardCornerRadius="@dimen/card_corner_radius_large"
+                app:cardElevation="@dimen/card_elevation_soft"
+                app:strokeColor="@color/cozy_card_stroke"
+                app:strokeWidth="@dimen/card_stroke_width">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <!-- Name & Rarity Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_cat_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="Milo" />
+
+                        <TextView
+                            android:id="@+id/tv_cat_rarity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_currency_pill"
+                            android:backgroundTint="@color/cozy_rarity_common_bg"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:textColor="@color/cozy_rarity_common"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Common" />
+
+                    </LinearLayout>
+
+                    <!-- Short Description -->
+                    <TextView
+                        android:id="@+id/tv_cat_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@color/cozy_subtext"
+                        android:textSize="14sp"
+                        tools:text="Milo loves to sleep in sunny spots and dreams of a big adventure!" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="@dimen/spacing_medium"
+                        android:background="@color/cozy_pastel_blue_light" />
+
+                    <!-- Info Rows (Rarity, Category, Found in) -->
+                    <!-- Row 1: Rarity -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="⭐ Rarity"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_info_rarity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="Common" />
+
+                    </LinearLayout>
+
+                    <!-- Row 2: Category / Theme -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🗂️ Category"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_info_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="Sleepy Cats" />
+
+                    </LinearLayout>
+
+                    <!-- Row 3: Found in / Source -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="📍 Found in"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_info_found_in"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cozy_navy_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="Available from start" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Interaction Section (Only for Owned Cats) -->
+            <LinearLayout
+                android:id="@+id/layout_interaction_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_interact_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/cozy_navy_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Interact with Milo" />
+
+                <!-- 4 Action Pills / Modes (Pet, Play, Smile, Sleep) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Pet -->
+                    <LinearLayout
+                        android:id="@+id/btn_action_pet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/cat_interaction_btn_size"
+                            android:layout_height="@dimen/cat_interaction_btn_size"
+                            android:background="@drawable/bg_circle_button"
+                            android:backgroundTint="@color/cozy_pastel_pink_light">
+
+                            <ImageView
+                                android:layout_width="@dimen/cat_interaction_icon_size"
+                                android:layout_height="@dimen/cat_interaction_icon_size"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_cat_pet" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/cat_interaction_pet"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Play -->
+                    <LinearLayout
+                        android:id="@+id/btn_action_play"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/cat_interaction_btn_size"
+                            android:layout_height="@dimen/cat_interaction_btn_size"
+                            android:background="@drawable/bg_circle_button"
+                            android:backgroundTint="@color/cozy_pastel_blue_light">
+
+                            <ImageView
+                                android:layout_width="@dimen/cat_interaction_icon_size"
+                                android:layout_height="@dimen/cat_interaction_icon_size"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_cat_play" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/cat_interaction_play"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Smile -->
+                    <LinearLayout
+                        android:id="@+id/btn_action_smile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/cat_interaction_btn_size"
+                            android:layout_height="@dimen/cat_interaction_btn_size"
+                            android:background="@drawable/bg_circle_button"
+                            android:backgroundTint="#FFF8E1">
+
+                            <ImageView
+                                android:layout_width="@dimen/cat_interaction_icon_size"
+                                android:layout_height="@dimen/cat_interaction_icon_size"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_cat_smile" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/cat_interaction_smile"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Sleep -->
+                    <LinearLayout
+                        android:id="@+id/btn_action_sleep"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/cat_interaction_btn_size"
+                            android:layout_height="@dimen/cat_interaction_btn_size"
+                            android:background="@drawable/bg_circle_button"
+                            android:backgroundTint="#E1F5FE">
+
+                            <ImageView
+                                android:layout_width="@dimen/cat_interaction_icon_size"
+                                android:layout_height="@dimen/cat_interaction_icon_size"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_cat_sleep" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/cat_interaction_sleep"
+                            android:textColor="@color/cozy_subtext"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Primary Tap to Interact Pill Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_interact"
+                    style="@style/Widget.CozyPuzzle.Button.Pill.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/cat_detail_btn_interact"
+                    app:icon="@drawable/ic_paw"
+                    app:iconGravity="textStart"
+                    app:iconSize="20dp" />
+
+            </LinearLayout>
+
+            <!-- Locked Cat Info Card (Only for Locked Cats) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_locked_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/cozy_pastel_blue_container"
+                app:cardCornerRadius="@dimen/card_corner_radius_medium"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/cozy_pastel_blue_light"
+                app:strokeWidth="1.5dp"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cat_unlock_how_to_unlock"
+                        android:textColor="@color/cozy_subtext"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_locked_condition_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/cozy_navy_text"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="Complete 10 levels" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_locked_condition"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:max="100"
+                        android:progressDrawable="@drawable/progress_level_capsule"
+                        tools:progress="30" />
+
+                    <TextView
+                        android:id="@+id/tv_locked_condition_ratio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/cozy_subtext"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="3/10" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
